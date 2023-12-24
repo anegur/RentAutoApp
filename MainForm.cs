@@ -15,6 +15,7 @@ namespace WinFormsApp1
         public MainForm()
         {
             InitializeComponent();
+            this.FormClosing += Form_FormClosing;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -22,19 +23,35 @@ namespace WinFormsApp1
 
         }
 
+        private void Form_FormClosing(object? sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void AdminButton_Click(object sender, EventArgs e)
         {
             this.Hide();
+            AdminAuthForm adminAuthForm = new AdminAuthForm();
+            adminAuthForm.Show();
         }
 
         private void EmlpoyeeButton_Click(object sender, EventArgs e)
         {
             this.Hide();
+            EmployeeAuthForm empAuthForm = new EmployeeAuthForm();
+            empAuthForm.Show();
         }
 
         private void ClientButton_Click(object sender, EventArgs e)
         {
             this.Hide();
+            ClientAuthForm clientAuthForm = new ClientAuthForm();
+            clientAuthForm.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
