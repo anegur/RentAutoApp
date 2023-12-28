@@ -86,10 +86,10 @@ namespace WinFormsApp1
 
             if (table.Rows.Count > 0)
             {
-                //this.Hide();
-                //AdminForm inspectorForm = new AdminForm();
-                //inspectorForm.Show();
-                Messages.DisplayInfoMessage("Вход успешен");
+                this.Hide();
+                AdminForm inspectorForm = new AdminForm();
+                inspectorForm.Show();
+                //Messages.DisplayInfoMessage("Вход успешен");
             }
             else
             {
