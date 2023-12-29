@@ -29,7 +29,9 @@ namespace WinFormsApp1
 
         private void clients_button_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            AdminClientForm adminClientForm = new AdminClientForm();
+            adminClientForm.Show();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -44,6 +46,13 @@ namespace WinFormsApp1
             this.Hide();
             AdminCarsForm adminCarsForm = new AdminCarsForm();
             adminCarsForm.Show();
+        }
+
+        private void fee_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminFeeForm adminFeeForm = new AdminFeeForm();
+            adminFeeForm.Show();
         }
     }
 }

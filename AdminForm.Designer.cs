@@ -86,6 +86,7 @@
             fee_button.TabIndex = 2;
             fee_button.Text = "Тарифы";
             fee_button.UseVisualStyleBackColor = true;
+            fee_button.Click += fee_button_Click;
             // 
             // clients_button
             // 
