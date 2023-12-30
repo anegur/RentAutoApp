@@ -54,5 +54,19 @@ namespace WinFormsApp1
             AdminFeeForm adminFeeForm = new AdminFeeForm();
             adminFeeForm.Show();
         }
+
+        private void emp_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminEmloyeeForm adminEmloyeeForm = new AdminEmloyeeForm();
+            adminEmloyeeForm.Show();
+        }
+
+        private void rent_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminRentForm adminRentForm = new AdminRentForm();
+            adminRentForm.Show();
+        }
     }
 }

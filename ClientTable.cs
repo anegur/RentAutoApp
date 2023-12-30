@@ -32,12 +32,12 @@ namespace WinFormsApp1
 
                 return table;
             }
-            public static bool Insert(string fio, string phone_n, string email)
+            public static bool Insert(string fio, string phone_n, string email, string password)
             {
                 NpgsqlCommand command;
                 string query =
-                    "INSERT INTO client (fio, phone_number, email) " +
-                    "VALUES (@fio, @phone_n, @email)";
+                    "INSERT INTO client (fio, phone_number, email, password) " +
+                    "VALUES (@fio, @phone_n, @email, @password)";
 
                 try
                 {
@@ -47,6 +47,7 @@ namespace WinFormsApp1
                     command.Parameters.AddWithValue("@fio", fio);
                     command.Parameters.AddWithValue("@phone_n", phone_n);
                     command.Parameters.AddWithValue("@email", email);
+                    command.Parameters.AddWithValue("@password", password);
 
                     if (command.ExecuteNonQuery() > 0)
                     {
@@ -66,11 +67,11 @@ namespace WinFormsApp1
                 }
             }
 
-            public static bool Update(int clientid, string fio, string phone_n, string email)
+            public static bool Update(int clientid, string fio, string phone_n, string email, string password)
             {
                 NpgsqlCommand command;
                 string query =
-                    "UPDATE client SET fio = @fio, phone_number = @phone_n, email = @email " +
+                    "UPDATE client SET fio = @fio, phone_number = @phone_n, email = @email, password = @password " +
                     "WHERE clientid = @clientid";
 
                 //try
@@ -82,6 +83,7 @@ namespace WinFormsApp1
                     command.Parameters.AddWithValue("@fio", fio);
                     command.Parameters.AddWithValue("@phone_n", phone_n);
                     command.Parameters.AddWithValue("@email", email);
+                    command.Parameters.AddWithValue("@password", password);
 
 
                     if (command.ExecuteNonQuery() > 0)

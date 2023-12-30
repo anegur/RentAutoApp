@@ -108,6 +108,7 @@
             rent_button.TabIndex = 4;
             rent_button.Text = "Прокаты";
             rent_button.UseVisualStyleBackColor = true;
+            rent_button.Click += rent_button_Click;
             // 
             // emp_button
             // 
@@ -118,6 +119,7 @@
             emp_button.TabIndex = 3;
             emp_button.Text = "Сотрудники";
             emp_button.UseVisualStyleBackColor = true;
+            emp_button.Click += emp_button_Click;
             // 
             // label1
             // 

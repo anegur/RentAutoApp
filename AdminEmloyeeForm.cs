@@ -1,38 +1,30 @@
-﻿using Npgsql;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace WinFormsApp1
 {
-    public partial class AdminClientForm : Form
+    public partial class AdminEmloyeeForm : Form
     {
-        public AdminClientForm()
+        public AdminEmloyeeForm()
         {
             InitializeComponent();
-            this.FormClosing += Form_FormClosing;
-        }
-        private void Form_FormClosing(object? sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
 
-        private void AdminClientForm_Load(object sender, EventArgs e)
+        private void AdminEmloyeeForm_Load(object sender, EventArgs e)
         {
-            insert_client_box.Visible = false;
-            update_client_box.Visible = false;
+            insert_employee_box.Visible = false;
+            update_employee_box.Visible = false;
 
-            clientDGV.DataSource = ClientTable.GetTable();
+            employeeDGV.DataSource = EmployeeTable.GetTable();
 
-            if (clientDGV.RowCount < 1)
+            if (employeeDGV.RowCount < 1)
             {
                 insert_table_button.Enabled = false;
                 delete_button.Enabled = false;
@@ -46,26 +38,26 @@ namespace WinFormsApp1
 
         private void insert_button_Click(object sender, EventArgs e)
         {
-            insert_client_box.Visible = true;
-            insert_client_box.BringToFront();
-            update_client_box.SendToBack();
+            insert_employee_box.Visible = true;
+            insert_employee_box.BringToFront();
+            update_employee_box.SendToBack();
         }
 
         private void update_button_Click(object sender, EventArgs e)
         {
-            update_client_box.Visible = true;
-            update_client_box.BringToFront();
-            update_client_box.SendToBack();
+            update_employee_box.Visible = true;
+            update_employee_box.BringToFront();
+            update_employee_box.SendToBack();
 
-            DataGridViewRow ds = clientDGV.CurrentRow;
+            DataGridViewRow ds = employeeDGV.CurrentRow;
 
-            string clientid = ds.Cells[0].Value.ToString();
+            string employeeid = ds.Cells[0].Value.ToString();
             string fio = ds.Cells[1].Value.ToString();
             string phone_n = ds.Cells[2].Value.ToString();
             string email = ds.Cells[3].Value.ToString();
             string password = ds.Cells[4].Value.ToString();
 
-            update_clientid_tb.Text = clientid;
+            update_employeeid_tb.Text = employeeid;
             update_fio_tb.Text = fio;
             update_numb_tb.Text = phone_n;
             update_email_tb.Text = email;
@@ -76,12 +68,12 @@ namespace WinFormsApp1
         {
             try
             {
-                int clientid = (int)clientDGV.CurrentRow.Cells[0].Value;
+                int employeeid = (int)employeeDGV.CurrentRow.Cells[0].Value;
                 DialogResult dr = Messages.DisplayQuestionMessage("Вы действительно хотите удалить данные? Они могут быть связаны");
                 if (dr == DialogResult.Yes)
                 {
-                    ClientTable.Delete(clientid);
-                    clientDGV.DataSource = ClientTable.GetTable();
+                    EmployeeTable.Delete(employeeid);
+                    employeeDGV.DataSource = EmployeeTable.GetTable();
                     Messages.DisplayInfoMessage("Данные успешно удалены!");
                 }
             }
@@ -90,7 +82,7 @@ namespace WinFormsApp1
                 Messages.DisplayErrorMessage("Ошибка при удалении данных!");
             }
         }
-       
+
         private void insert_table_button_Click(object sender, EventArgs e)
         {
             string fio = insert_fio_tb.Text;
@@ -98,7 +90,7 @@ namespace WinFormsApp1
             string email = insert_mail_tb.Text;
             string password = insert_pass_tb.Text;
 
-            if (fio == "" || phone_n == "" || email == "")
+            if (fio == "" || phone_n == "" || email == "" || password == "")
             {
                 Messages.DisplayErrorMessage("Заполните все поля!");
                 return;
@@ -151,53 +143,58 @@ namespace WinFormsApp1
             //    return;
             //}
 
-            if (ClientTable.Insert(fio, phone_n, email, password))
+            if (EmployeeTable.Insert(fio, phone_n, email, password))
             {
                 insert_fio_tb.Text = "";
                 insert_numb_tb.Text = "";
                 insert_mail_tb.Text = "";
                 insert_pass_tb.Text = "";
 
-                insert_client_box.Visible = false;
+                insert_employee_box.Visible = false;
 
-                clientDGV.DataSource = ClientTable.GetTable();
+                employeeDGV.DataSource = EmployeeTable.GetTable();
                 Messages.DisplayInfoMessage("Данные успешно добавлены!");
             }
             else
                 Messages.DisplayErrorMessage("Ошибка при добавлении данных!");
         }
 
+        private void insert_cancel_button_Click(object sender, EventArgs e)
+        {
+            insert_employee_box.Visible = false;
+        }
+
         private void update_table_button_Click(object sender, EventArgs e)
         {
-            string clientid = update_clientid_tb.Text;
+            string employeeid = update_employeeid_tb.Text;
             string fio = update_fio_tb.Text;
             string phone_n = update_numb_tb.Text;
             string email = update_email_tb.Text;
             string password = update_pass_tb.Text;
             int clientId;
 
-            int currentClientId = (int)clientDGV.CurrentRow.Cells[0].Value;
+            int currentClientId = (int)employeeDGV.CurrentRow.Cells[0].Value;
 
-            if (fio == "" || phone_n == "" || email == "" || clientid == "" || password == "")
+            if (fio == "" || phone_n == "" || email == "" || employeeid == "" || password == "")
             {
                 Messages.DisplayErrorMessage("Заполните все поля!");
                 return;
             }
 
-            if (!Int32.TryParse(clientid, out clientId))
+            if (!Int32.TryParse(employeeid, out clientId))
             {
-                Messages.DisplayErrorMessage("Ошибка ввода ID клиента!");
+                Messages.DisplayErrorMessage("Ошибка ввода ID сотрудника!");
                 return;
             }
 
             //вставить те же проверки, что и на вводе
 
-            if (ClientTable.IsExistsDriver(clientId))
+            if (EmployeeTable.IsExistsDriver(clientId))
             {
-                if (ClientTable.Update(clientId, fio, phone_n, email, password))
+                if (EmployeeTable.Update(clientId, fio, phone_n, email, password))
                 {
-                    clientDGV.DataSource = ClientTable.GetTable();
-                    update_client_box.Visible = false;
+                    employeeDGV.DataSource = EmployeeTable.GetTable();
+                    update_employee_box.Visible = false;
                     Messages.DisplayInfoMessage("Данные успешно обновлены!");
                 }
                 else
@@ -211,14 +208,9 @@ namespace WinFormsApp1
             }
         }
 
-        private void insert_cancel_button_Click(object sender, EventArgs e)
-        {
-            insert_client_box.Visible = false;
-        }
-
         private void update_cancel_button_Click(object sender, EventArgs e)
         {
-            update_client_box.Visible = false;
+            update_employee_box.Visible = false;
         }
 
         private void to_back_button_Click(object sender, EventArgs e)
@@ -226,21 +218,6 @@ namespace WinFormsApp1
             this.Hide();
             AdminForm adminForm = new AdminForm();
             adminForm.Show();
-        }
-
-        private void update_numb_tb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void insert_pass_tb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

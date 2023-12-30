@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1
 {
-    partial class AdminClientForm
+    partial class AdminEmloyeeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,19 +32,19 @@
             label2 = new Label();
             to_back_button = new Label();
             panel1 = new Panel();
-            clientDGV = new DataGridView();
-            clientid = new DataGridViewTextBoxColumn();
+            employeeDGV = new DataGridView();
+            employeeid = new DataGridViewTextBoxColumn();
             fio = new DataGridViewTextBoxColumn();
             phone_number = new DataGridViewTextBoxColumn();
             email = new DataGridViewTextBoxColumn();
             password = new DataGridViewTextBoxColumn();
-            update_client_box = new GroupBox();
+            update_employee_box = new GroupBox();
             label5 = new Label();
             label3 = new Label();
             update_pass_tb = new TextBox();
             label11 = new Label();
             label7 = new Label();
-            update_clientid_tb = new TextBox();
+            update_employeeid_tb = new TextBox();
             label12 = new Label();
             update_fio_tb = new TextBox();
             update_table_button = new Button();
@@ -55,7 +55,7 @@
             delete_button = new Button();
             update_button = new Button();
             insert_button = new Button();
-            insert_client_box = new GroupBox();
+            insert_employee_box = new GroupBox();
             label4 = new Label();
             insert_pass_tb = new TextBox();
             label10 = new Label();
@@ -68,9 +68,9 @@
             insert_numb_tb = new TextBox();
             label1 = new Label();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)clientDGV).BeginInit();
-            update_client_box.SuspendLayout();
-            insert_client_box.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)employeeDGV).BeginInit();
+            update_employee_box.SuspendLayout();
+            insert_employee_box.SuspendLayout();
             SuspendLayout();
             // 
             // label2
@@ -80,9 +80,9 @@
             label2.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label2.Location = new Point(101, 7);
             label2.Name = "label2";
-            label2.Size = new Size(246, 29);
-            label2.TabIndex = 16;
-            label2.Text = "Таблица: Клиенты";
+            label2.Size = new Size(284, 29);
+            label2.TabIndex = 20;
+            label2.Text = "Таблица: Сотрудники";
             // 
             // to_back_button
             // 
@@ -93,7 +93,7 @@
             to_back_button.Location = new Point(-9, -3);
             to_back_button.Name = "to_back_button";
             to_back_button.Size = new Size(121, 45);
-            to_back_button.TabIndex = 15;
+            to_back_button.TabIndex = 19;
             to_back_button.Text = "<-назад";
             to_back_button.TextAlign = ContentAlignment.MiddleCenter;
             to_back_button.Click += to_back_button_Click;
@@ -102,47 +102,48 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.Honeydew;
-            panel1.Controls.Add(clientDGV);
-            panel1.Controls.Add(update_client_box);
+            panel1.Controls.Add(employeeDGV);
+            panel1.Controls.Add(update_employee_box);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(delete_button);
             panel1.Controls.Add(update_button);
             panel1.Controls.Add(insert_button);
-            panel1.Controls.Add(insert_client_box);
+            panel1.Controls.Add(insert_employee_box);
             panel1.ForeColor = Color.FromArgb(224, 224, 224);
             panel1.Location = new Point(-9, 45);
             panel1.Name = "panel1";
             panel1.Size = new Size(793, 504);
-            panel1.TabIndex = 14;
+            panel1.TabIndex = 18;
             // 
-            // clientDGV
+            // employeeDGV
             // 
-            clientDGV.AllowUserToAddRows = false;
-            clientDGV.AllowUserToDeleteRows = false;
-            clientDGV.AllowUserToResizeColumns = false;
-            clientDGV.AllowUserToResizeRows = false;
-            clientDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            clientDGV.Columns.AddRange(new DataGridViewColumn[] { clientid, fio, phone_number, email, password });
+            employeeDGV.AllowUserToAddRows = false;
+            employeeDGV.AllowUserToDeleteRows = false;
+            employeeDGV.AllowUserToResizeColumns = false;
+            employeeDGV.AllowUserToResizeRows = false;
+            employeeDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            employeeDGV.Columns.AddRange(new DataGridViewColumn[] { employeeid, fio, phone_number, email, password });
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Window;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            clientDGV.DefaultCellStyle = dataGridViewCellStyle1;
-            clientDGV.GridColor = SystemColors.WindowText;
-            clientDGV.Location = new Point(14, 3);
-            clientDGV.Name = "clientDGV";
-            clientDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            clientDGV.Size = new Size(564, 256);
-            clientDGV.TabIndex = 19;
+            employeeDGV.DefaultCellStyle = dataGridViewCellStyle1;
+            employeeDGV.GridColor = SystemColors.WindowText;
+            employeeDGV.Location = new Point(14, 3);
+            employeeDGV.Name = "employeeDGV";
+            employeeDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            employeeDGV.Size = new Size(564, 256);
+            employeeDGV.TabIndex = 19;
             // 
-            // clientid
+            // employeeid
             // 
-            clientid.DataPropertyName = "clientid";
-            clientid.HeaderText = "ID Клиента";
-            clientid.Name = "clientid";
+            employeeid.DataPropertyName = "employeeid";
+            employeeid.HeaderText = "ID Сотрудника";
+            employeeid.Name = "employeeid";
+            employeeid.Width = 130;
             // 
             // fio
             // 
@@ -171,29 +172,29 @@
             password.HeaderText = "Пароль";
             password.Name = "password";
             // 
-            // update_client_box
+            // update_employee_box
             // 
-            update_client_box.BackColor = Color.LightSteelBlue;
-            update_client_box.Controls.Add(label5);
-            update_client_box.Controls.Add(label3);
-            update_client_box.Controls.Add(update_pass_tb);
-            update_client_box.Controls.Add(label11);
-            update_client_box.Controls.Add(label7);
-            update_client_box.Controls.Add(update_clientid_tb);
-            update_client_box.Controls.Add(label12);
-            update_client_box.Controls.Add(update_fio_tb);
-            update_client_box.Controls.Add(update_table_button);
-            update_client_box.Controls.Add(update_cancel_button);
-            update_client_box.Controls.Add(update_email_tb);
-            update_client_box.Controls.Add(update_numb_tb);
-            update_client_box.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            update_client_box.ForeColor = Color.Black;
-            update_client_box.Location = new Point(395, 265);
-            update_client_box.Name = "update_client_box";
-            update_client_box.Size = new Size(378, 236);
-            update_client_box.TabIndex = 16;
-            update_client_box.TabStop = false;
-            update_client_box.Text = "Изменение";
+            update_employee_box.BackColor = Color.LightSteelBlue;
+            update_employee_box.Controls.Add(label5);
+            update_employee_box.Controls.Add(label3);
+            update_employee_box.Controls.Add(update_pass_tb);
+            update_employee_box.Controls.Add(label11);
+            update_employee_box.Controls.Add(label7);
+            update_employee_box.Controls.Add(update_employeeid_tb);
+            update_employee_box.Controls.Add(label12);
+            update_employee_box.Controls.Add(update_fio_tb);
+            update_employee_box.Controls.Add(update_table_button);
+            update_employee_box.Controls.Add(update_cancel_button);
+            update_employee_box.Controls.Add(update_email_tb);
+            update_employee_box.Controls.Add(update_numb_tb);
+            update_employee_box.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            update_employee_box.ForeColor = Color.Black;
+            update_employee_box.Location = new Point(395, 265);
+            update_employee_box.Name = "update_employee_box";
+            update_employee_box.Size = new Size(378, 236);
+            update_employee_box.TabIndex = 16;
+            update_employee_box.TabStop = false;
+            update_employee_box.Text = "Изменение";
             // 
             // label5
             // 
@@ -224,7 +225,6 @@
             update_pass_tb.Name = "update_pass_tb";
             update_pass_tb.Size = new Size(174, 29);
             update_pass_tb.TabIndex = 22;
-            update_pass_tb.TextChanged += textBox1_TextChanged;
             // 
             // label11
             // 
@@ -248,12 +248,12 @@
             label7.TabIndex = 20;
             label7.Text = "ФИО";
             // 
-            // update_clientid_tb
+            // update_employeeid_tb
             // 
-            update_clientid_tb.Location = new Point(11, 44);
-            update_clientid_tb.Name = "update_clientid_tb";
-            update_clientid_tb.Size = new Size(99, 29);
-            update_clientid_tb.TabIndex = 22;
+            update_employeeid_tb.Location = new Point(11, 44);
+            update_employeeid_tb.Name = "update_employeeid_tb";
+            update_employeeid_tb.Size = new Size(112, 29);
+            update_employeeid_tb.TabIndex = 22;
             // 
             // label12
             // 
@@ -262,9 +262,9 @@
             label12.ForeColor = Color.DarkGreen;
             label12.Location = new Point(7, 20);
             label12.Name = "label12";
-            label12.Size = new Size(90, 21);
+            label12.Size = new Size(116, 21);
             label12.TabIndex = 21;
-            label12.Text = "ID клиента";
+            label12.Text = "ID сотрудника";
             // 
             // update_fio_tb
             // 
@@ -310,7 +310,6 @@
             update_numb_tb.Name = "update_numb_tb";
             update_numb_tb.Size = new Size(174, 29);
             update_numb_tb.TabIndex = 1;
-            update_numb_tb.TextChanged += update_numb_tb_TextChanged;
             // 
             // label6
             // 
@@ -359,27 +358,27 @@
             insert_button.UseVisualStyleBackColor = true;
             insert_button.Click += insert_button_Click;
             // 
-            // insert_client_box
+            // insert_employee_box
             // 
-            insert_client_box.BackColor = Color.LightSteelBlue;
-            insert_client_box.Controls.Add(label4);
-            insert_client_box.Controls.Add(insert_pass_tb);
-            insert_client_box.Controls.Add(label10);
-            insert_client_box.Controls.Add(insert_fio_tb);
-            insert_client_box.Controls.Add(insert_table_button);
-            insert_client_box.Controls.Add(insert_cancel_button);
-            insert_client_box.Controls.Add(label8);
-            insert_client_box.Controls.Add(label9);
-            insert_client_box.Controls.Add(insert_mail_tb);
-            insert_client_box.Controls.Add(insert_numb_tb);
-            insert_client_box.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            insert_client_box.ForeColor = Color.Black;
-            insert_client_box.Location = new Point(8, 265);
-            insert_client_box.Name = "insert_client_box";
-            insert_client_box.Size = new Size(381, 236);
-            insert_client_box.TabIndex = 18;
-            insert_client_box.TabStop = false;
-            insert_client_box.Text = "Добавление";
+            insert_employee_box.BackColor = Color.LightSteelBlue;
+            insert_employee_box.Controls.Add(label4);
+            insert_employee_box.Controls.Add(insert_pass_tb);
+            insert_employee_box.Controls.Add(label10);
+            insert_employee_box.Controls.Add(insert_fio_tb);
+            insert_employee_box.Controls.Add(insert_table_button);
+            insert_employee_box.Controls.Add(insert_cancel_button);
+            insert_employee_box.Controls.Add(label8);
+            insert_employee_box.Controls.Add(label9);
+            insert_employee_box.Controls.Add(insert_mail_tb);
+            insert_employee_box.Controls.Add(insert_numb_tb);
+            insert_employee_box.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            insert_employee_box.ForeColor = Color.Black;
+            insert_employee_box.Location = new Point(8, 265);
+            insert_employee_box.Name = "insert_employee_box";
+            insert_employee_box.Size = new Size(381, 236);
+            insert_employee_box.TabIndex = 18;
+            insert_employee_box.TabStop = false;
+            insert_employee_box.Text = "Добавление";
             // 
             // label4
             // 
@@ -398,7 +397,6 @@
             insert_pass_tb.Name = "insert_pass_tb";
             insert_pass_tb.Size = new Size(175, 29);
             insert_pass_tb.TabIndex = 20;
-            insert_pass_tb.TextChanged += insert_pass_tb_TextChanged;
             // 
             // label10
             // 
@@ -486,10 +484,10 @@
             label1.Location = new Point(-9, -3);
             label1.Name = "label1";
             label1.Size = new Size(793, 45);
-            label1.TabIndex = 13;
+            label1.TabIndex = 17;
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // AdminClientForm
+            // AdminEmloyeeForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -498,17 +496,17 @@
             Controls.Add(to_back_button);
             Controls.Add(panel1);
             Controls.Add(label1);
-            Name = "AdminClientForm";
+            Name = "AdminEmloyeeForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AdminClientForm";
-            Load += AdminClientForm_Load;
+            Text = "AdminEmloyeeForm";
+            Load += AdminEmloyeeForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)clientDGV).EndInit();
-            update_client_box.ResumeLayout(false);
-            update_client_box.PerformLayout();
-            insert_client_box.ResumeLayout(false);
-            insert_client_box.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)employeeDGV).EndInit();
+            update_employee_box.ResumeLayout(false);
+            update_employee_box.PerformLayout();
+            insert_employee_box.ResumeLayout(false);
+            insert_employee_box.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -518,9 +516,19 @@
         private Label label2;
         private Label to_back_button;
         private Panel panel1;
-        private DataGridView clientDGV;
-        private GroupBox update_client_box;
-        private TextBox update_clientid_tb;
+        private DataGridView employeeDGV;
+        private DataGridViewTextBoxColumn employeeid;
+        private DataGridViewTextBoxColumn fio;
+        private DataGridViewTextBoxColumn phone_number;
+        private DataGridViewTextBoxColumn email;
+        private DataGridViewTextBoxColumn password;
+        private GroupBox update_employee_box;
+        private Label label5;
+        private Label label3;
+        private TextBox update_pass_tb;
+        private Label label11;
+        private Label label7;
+        private TextBox update_employeeid_tb;
         private Label label12;
         private TextBox update_fio_tb;
         private Button update_table_button;
@@ -531,7 +539,9 @@
         private Button delete_button;
         private Button update_button;
         private Button insert_button;
-        private GroupBox insert_client_box;
+        private GroupBox insert_employee_box;
+        private Label label4;
+        private TextBox insert_pass_tb;
         private Label label10;
         private TextBox insert_fio_tb;
         private Button insert_table_button;
@@ -541,17 +551,5 @@
         private TextBox insert_mail_tb;
         private TextBox insert_numb_tb;
         private Label label1;
-        private Label label3;
-        private Label label11;
-        private Label label7;
-        private Label label4;
-        private TextBox insert_pass_tb;
-        private Label label5;
-        private TextBox update_pass_tb;
-        private DataGridViewTextBoxColumn clientid;
-        private DataGridViewTextBoxColumn fio;
-        private DataGridViewTextBoxColumn phone_number;
-        private DataGridViewTextBoxColumn email;
-        private DataGridViewTextBoxColumn password;
     }
 }
