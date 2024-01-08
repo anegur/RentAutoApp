@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Npgsql;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace WinFormsApp1
 {
@@ -33,6 +27,47 @@ namespace WinFormsApp1
             this.Hide();
             MainForm mainForm = new MainForm();
             mainForm.Show();
+        }
+
+        private void loginTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void authButton_Click(object sender, EventArgs e)
+        {
+            String login = loginTextBox.Text;
+            String pass = passTextBox.Text;
+
+            if (login == "" || pass == "")
+            {
+                Messages.DisplayErrorMessage("Заполните все поля!");
+            }
+
+            string query =
+                "SELECT * FROM employee " +
+                "WHERE fio = @login AND password = @pass";
+
+            DataTable table = new DataTable();
+            NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
+            NpgsqlCommand command = new NpgsqlCommand(query, DB.GetConnection());
+
+            command.Parameters.AddWithValue("@login", login);
+            command.Parameters.AddWithValue("@pass", pass);
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+            {
+                this.Hide();
+                AdminForm inspectorForm = new AdminForm();
+                inspectorForm.Show();
+                //Messages.DisplayInfoMessage("Вход успешен");
+            }
+            else
+            {
+                Messages.DisplayErrorMessage("Неверные ФИО или пароль!");
+            }
         }
     }
 }

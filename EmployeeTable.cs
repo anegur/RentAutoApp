@@ -1,10 +1,6 @@
 ﻿using Npgsql;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace WinFormsApp1
 {
@@ -35,7 +31,7 @@ namespace WinFormsApp1
         {
             NpgsqlCommand command;
             string query =
-                "INSERT INTO client (fio, phone_number, email, password) " +
+                "INSERT INTO employee (fio, phone_number, email, password) " +
                 "VALUES (@fio, @phone_n, @email, @password)";
 
             try
@@ -70,7 +66,7 @@ namespace WinFormsApp1
         {
             NpgsqlCommand command;
             string query =
-                "UPDATE client SET fio = @fio, phone_number = @phone_n, email = @email, password = @password " +
+                "UPDATE employee SET fio = @fio, phone_number = @phone_n, email = @email, password = @password " +
                 "WHERE employeeid = @employeeid";
 
             //try

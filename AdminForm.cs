@@ -68,5 +68,10 @@ namespace WinFormsApp1
             AdminRentForm adminRentForm = new AdminRentForm();
             adminRentForm.Show();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

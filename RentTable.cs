@@ -36,11 +36,11 @@ namespace WinFormsApp1
         {
             NpgsqlCommand command;
             string query =
-                "INSERT INTO driver (employeeid, carid, start_date, end_date) " +
+                "INSERT INTO rent (clientid, employeeid, carid, start_date, end_date) " +
                 "VALUES (@clientid, @employeeid, @carid, @start_date, @end_date)";
 
-            try
-            {
+            //try
+            //{
                 DB.openConnection();
 
                 command = new NpgsqlCommand(query, DB.GetConnection());
@@ -60,20 +60,20 @@ namespace WinFormsApp1
                     DB.closeConnection();
                     return false;
                 }
-            }
-            catch
-            {
-                DB.closeConnection();
-                return false;
-            }
-        }
+            //}
+            //catch
+            //{
+            //    DB.closeConnection();
+            //    return false;
+            //}
+}
 
 
         public static bool Update(int rentid, int clientid, int employeeid, int carid, DateTime start_date, DateTime end_date)
         {
             NpgsqlCommand command;
             string query =
-                "UPDATE driver SET clientid = @clientid, employeeid = @employeeid, carid = @carid, start_date = @start_date, end_date = @end_date " +
+                "UPDATE rent SET clientid = @clientid, employeeid = @employeeid, carid = @carid, start_date = @start_date, end_date = @end_date " +
                 "WHERE rentid = @rentid";
 
             try

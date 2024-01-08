@@ -90,7 +90,7 @@ namespace WinFormsApp1
                 Messages.DisplayErrorMessage("Ошибка при удалении данных!");
             }
         }
-       
+
         private void insert_table_button_Click(object sender, EventArgs e)
         {
             string fio = insert_fio_tb.Text;
@@ -239,6 +239,11 @@ namespace WinFormsApp1
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void insert_client_box_Enter(object sender, EventArgs e)
         {
 
         }

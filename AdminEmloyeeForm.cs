@@ -219,5 +219,10 @@ namespace WinFormsApp1
             AdminForm adminForm = new AdminForm();
             adminForm.Show();
         }
+
+        private void insert_pass_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -65,9 +65,9 @@
             label2.AutoSize = true;
             label2.BackColor = Color.OldLace;
             label2.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label2.Location = new Point(101, 7);
+            label2.Location = new Point(115, 9);
             label2.Name = "label2";
-            label2.Size = new Size(234, 29);
+            label2.Size = new Size(291, 36);
             label2.TabIndex = 16;
             label2.Text = "Таблица: Тарифы";
             // 
@@ -77,9 +77,9 @@
             to_back_button.Cursor = Cursors.Hand;
             to_back_button.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             to_back_button.ForeColor = Color.OliveDrab;
-            to_back_button.Location = new Point(-9, -3);
+            to_back_button.Location = new Point(-10, -4);
             to_back_button.Name = "to_back_button";
-            to_back_button.Size = new Size(121, 45);
+            to_back_button.Size = new Size(138, 60);
             to_back_button.TabIndex = 15;
             to_back_button.Text = "<-назад";
             to_back_button.TextAlign = ContentAlignment.MiddleCenter;
@@ -97,9 +97,10 @@
             panel1.Controls.Add(insert_button);
             panel1.Controls.Add(insert_fee_box);
             panel1.ForeColor = Color.FromArgb(224, 224, 224);
-            panel1.Location = new Point(-9, 45);
+            panel1.Location = new Point(-10, 60);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(793, 460);
+            panel1.Size = new Size(906, 613);
             panel1.TabIndex = 14;
             // 
             // feeDGV
@@ -118,10 +119,12 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             feeDGV.DefaultCellStyle = dataGridViewCellStyle1;
             feeDGV.GridColor = SystemColors.WindowText;
-            feeDGV.Location = new Point(14, 3);
+            feeDGV.Location = new Point(16, 4);
+            feeDGV.Margin = new Padding(3, 4, 3, 4);
             feeDGV.Name = "feeDGV";
+            feeDGV.RowHeadersWidth = 51;
             feeDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            feeDGV.Size = new Size(564, 256);
+            feeDGV.Size = new Size(645, 341);
             feeDGV.TabIndex = 19;
             feeDGV.CellContentClick += feeDGV_CellContentClick;
             // 
@@ -138,9 +141,11 @@
             update_fee_box.Controls.Add(update_cost_tb);
             update_fee_box.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             update_fee_box.ForeColor = Color.Black;
-            update_fee_box.Location = new Point(395, 265);
+            update_fee_box.Location = new Point(451, 353);
+            update_fee_box.Margin = new Padding(3, 4, 3, 4);
             update_fee_box.Name = "update_fee_box";
-            update_fee_box.Size = new Size(378, 186);
+            update_fee_box.Padding = new Padding(3, 4, 3, 4);
+            update_fee_box.Size = new Size(432, 248);
             update_fee_box.TabIndex = 16;
             update_fee_box.TabStop = false;
             update_fee_box.Text = "Изменение";
@@ -150,9 +155,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label5.ForeColor = Color.DarkGreen;
-            label5.Location = new Point(6, 73);
+            label5.Location = new Point(7, 97);
             label5.Name = "label5";
-            label5.Size = new Size(163, 21);
+            label5.Size = new Size(207, 28);
             label5.TabIndex = 20;
             label5.Text = "Цена тарифа р/день";
             // 
@@ -161,18 +166,19 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label3.ForeColor = Color.DarkGreen;
-            label3.Location = new Point(6, 20);
+            label3.Location = new Point(7, 27);
             label3.Name = "label3";
-            label3.Size = new Size(141, 21);
+            label3.Size = new Size(176, 28);
             label3.TabIndex = 23;
             label3.Text = "Название тарифа";
             label3.Click += label3_Click;
             // 
             // update_feeid_tb
             // 
-            update_feeid_tb.Location = new Point(112, 147);
+            update_feeid_tb.Location = new Point(128, 196);
+            update_feeid_tb.Margin = new Padding(3, 4, 3, 4);
             update_feeid_tb.Name = "update_feeid_tb";
-            update_feeid_tb.Size = new Size(102, 29);
+            update_feeid_tb.Size = new Size(116, 34);
             update_feeid_tb.TabIndex = 22;
             // 
             // label12
@@ -180,26 +186,28 @@
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label12.ForeColor = Color.DarkGreen;
-            label12.Location = new Point(112, 126);
+            label12.Location = new Point(128, 168);
             label12.Name = "label12";
-            label12.Size = new Size(85, 21);
+            label12.Size = new Size(106, 28);
             label12.TabIndex = 21;
             label12.Text = "ID тарифа";
             // 
             // update_name_tb
             // 
-            update_name_tb.Location = new Point(4, 44);
+            update_name_tb.Location = new Point(5, 59);
+            update_name_tb.Margin = new Padding(3, 4, 3, 4);
             update_name_tb.Name = "update_name_tb";
-            update_name_tb.Size = new Size(141, 29);
+            update_name_tb.Size = new Size(161, 34);
             update_name_tb.TabIndex = 18;
             // 
             // update_table_button
             // 
             update_table_button.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             update_table_button.ForeColor = SystemColors.ControlText;
-            update_table_button.Location = new Point(216, 88);
+            update_table_button.Location = new Point(247, 117);
+            update_table_button.Margin = new Padding(3, 4, 3, 4);
             update_table_button.Name = "update_table_button";
-            update_table_button.Size = new Size(152, 45);
+            update_table_button.Size = new Size(174, 60);
             update_table_button.TabIndex = 17;
             update_table_button.Text = "Изменить";
             update_table_button.UseVisualStyleBackColor = true;
@@ -209,9 +217,10 @@
             // 
             update_cancel_button.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             update_cancel_button.ForeColor = SystemColors.ControlText;
-            update_cancel_button.Location = new Point(216, 138);
+            update_cancel_button.Location = new Point(247, 184);
+            update_cancel_button.Margin = new Padding(3, 4, 3, 4);
             update_cancel_button.Name = "update_cancel_button";
-            update_cancel_button.Size = new Size(152, 45);
+            update_cancel_button.Size = new Size(174, 60);
             update_cancel_button.TabIndex = 17;
             update_cancel_button.Text = "Отменить";
             update_cancel_button.UseVisualStyleBackColor = true;
@@ -219,9 +228,10 @@
             // 
             // update_cost_tb
             // 
-            update_cost_tb.Location = new Point(4, 97);
+            update_cost_tb.Location = new Point(5, 129);
+            update_cost_tb.Margin = new Padding(3, 4, 3, 4);
             update_cost_tb.Name = "update_cost_tb";
-            update_cost_tb.Size = new Size(210, 29);
+            update_cost_tb.Size = new Size(239, 34);
             update_cost_tb.TabIndex = 1;
             // 
             // label6
@@ -229,9 +239,9 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label6.ForeColor = SystemColors.ControlDarkDark;
-            label6.Location = new Point(646, 13);
+            label6.Location = new Point(738, 17);
             label6.Name = "label6";
-            label6.Size = new Size(72, 21);
+            label6.Size = new Size(91, 28);
             label6.TabIndex = 18;
             label6.Text = "Вкладки";
             // 
@@ -239,9 +249,10 @@
             // 
             delete_button.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             delete_button.ForeColor = Color.Maroon;
-            delete_button.Location = new Point(584, 188);
+            delete_button.Location = new Point(667, 251);
+            delete_button.Margin = new Padding(3, 4, 3, 4);
             delete_button.Name = "delete_button";
-            delete_button.Size = new Size(191, 45);
+            delete_button.Size = new Size(218, 60);
             delete_button.TabIndex = 15;
             delete_button.Text = "Удалить";
             delete_button.UseVisualStyleBackColor = true;
@@ -251,9 +262,10 @@
             // 
             update_button.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             update_button.ForeColor = SystemColors.ControlText;
-            update_button.Location = new Point(584, 88);
+            update_button.Location = new Point(667, 117);
+            update_button.Margin = new Padding(3, 4, 3, 4);
             update_button.Name = "update_button";
-            update_button.Size = new Size(191, 45);
+            update_button.Size = new Size(218, 60);
             update_button.TabIndex = 14;
             update_button.Text = "Изменить";
             update_button.UseVisualStyleBackColor = true;
@@ -263,9 +275,10 @@
             // 
             insert_button.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             insert_button.ForeColor = SystemColors.ControlText;
-            insert_button.Location = new Point(584, 38);
+            insert_button.Location = new Point(667, 51);
+            insert_button.Margin = new Padding(3, 4, 3, 4);
             insert_button.Name = "insert_button";
-            insert_button.Size = new Size(191, 45);
+            insert_button.Size = new Size(218, 60);
             insert_button.TabIndex = 13;
             insert_button.Text = "Добавить";
             insert_button.UseVisualStyleBackColor = true;
@@ -282,9 +295,11 @@
             insert_fee_box.Controls.Add(insert_cost_tb);
             insert_fee_box.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             insert_fee_box.ForeColor = Color.Black;
-            insert_fee_box.Location = new Point(8, 265);
+            insert_fee_box.Location = new Point(9, 353);
+            insert_fee_box.Margin = new Padding(3, 4, 3, 4);
             insert_fee_box.Name = "insert_fee_box";
-            insert_fee_box.Size = new Size(381, 186);
+            insert_fee_box.Padding = new Padding(3, 4, 3, 4);
+            insert_fee_box.Size = new Size(435, 248);
             insert_fee_box.TabIndex = 18;
             insert_fee_box.TabStop = false;
             insert_fee_box.Text = "Добавление";
@@ -294,26 +309,28 @@
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label10.ForeColor = Color.DarkGreen;
-            label10.Location = new Point(6, 20);
+            label10.Location = new Point(7, 27);
             label10.Name = "label10";
-            label10.Size = new Size(141, 21);
+            label10.Size = new Size(176, 28);
             label10.TabIndex = 19;
             label10.Text = "Название тарифа";
             // 
             // insert_name_tb
             // 
-            insert_name_tb.Location = new Point(6, 44);
+            insert_name_tb.Location = new Point(7, 59);
+            insert_name_tb.Margin = new Padding(3, 4, 3, 4);
             insert_name_tb.Name = "insert_name_tb";
-            insert_name_tb.Size = new Size(192, 29);
+            insert_name_tb.Size = new Size(219, 34);
             insert_name_tb.TabIndex = 18;
             // 
             // insert_table_button
             // 
             insert_table_button.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             insert_table_button.ForeColor = SystemColors.ControlText;
-            insert_table_button.Location = new Point(218, 88);
+            insert_table_button.Location = new Point(249, 117);
+            insert_table_button.Margin = new Padding(3, 4, 3, 4);
             insert_table_button.Name = "insert_table_button";
-            insert_table_button.Size = new Size(157, 45);
+            insert_table_button.Size = new Size(179, 60);
             insert_table_button.TabIndex = 17;
             insert_table_button.Text = "Добавить";
             insert_table_button.UseVisualStyleBackColor = true;
@@ -323,9 +340,10 @@
             // 
             insert_cancel_button.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             insert_cancel_button.ForeColor = SystemColors.ControlText;
-            insert_cancel_button.Location = new Point(218, 138);
+            insert_cancel_button.Location = new Point(249, 184);
+            insert_cancel_button.Margin = new Padding(3, 4, 3, 4);
             insert_cancel_button.Name = "insert_cancel_button";
-            insert_cancel_button.Size = new Size(157, 45);
+            insert_cancel_button.Size = new Size(179, 60);
             insert_cancel_button.TabIndex = 17;
             insert_cancel_button.Text = "Отменить";
             insert_cancel_button.UseVisualStyleBackColor = true;
@@ -336,17 +354,18 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label8.ForeColor = Color.DarkGreen;
-            label8.Location = new Point(7, 76);
+            label8.Location = new Point(8, 101);
             label8.Name = "label8";
-            label8.Size = new Size(163, 21);
+            label8.Size = new Size(207, 28);
             label8.TabIndex = 4;
             label8.Text = "Цена тарифа р/день";
             // 
             // insert_cost_tb
             // 
-            insert_cost_tb.Location = new Point(6, 97);
+            insert_cost_tb.Location = new Point(7, 129);
+            insert_cost_tb.Margin = new Padding(3, 4, 3, 4);
             insert_cost_tb.Name = "insert_cost_tb";
-            insert_cost_tb.Size = new Size(192, 29);
+            insert_cost_tb.Size = new Size(219, 34);
             insert_cost_tb.TabIndex = 1;
             // 
             // label1
@@ -354,21 +373,22 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label1.BackColor = Color.OldLace;
             label1.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label1.Location = new Point(-9, -3);
+            label1.Location = new Point(-10, -4);
             label1.Name = "label1";
-            label1.Size = new Size(793, 45);
+            label1.Size = new Size(906, 60);
             label1.TabIndex = 13;
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // AdminFeeForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(775, 502);
+            ClientSize = new Size(886, 669);
             Controls.Add(label2);
             Controls.Add(to_back_button);
             Controls.Add(panel1);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "AdminFeeForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminFeeForm";
