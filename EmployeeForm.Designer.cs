@@ -106,6 +106,7 @@
             rent_button.TabIndex = 2;
             rent_button.Text = "Управление прокатами";
             rent_button.UseVisualStyleBackColor = true;
+            rent_button.Click += rent_button_Click;
             // 
             // EmployeeForm
             // 
@@ -117,6 +118,7 @@
             Controls.Add(panel1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "EmployeeForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EmployeeForm";
             panel1.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);

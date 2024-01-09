@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1
 {
-    partial class AdminRentForm
+    partial class EmployeeRentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            buttonResetSize = new Button();
+            buttonIncreaseWidth = new Button();
             label2 = new Label();
             to_back_button = new Label();
             panel1 = new Panel();
@@ -60,16 +61,12 @@
             update_carid_tb = new TextBox();
             label7 = new Label();
             label9 = new Label();
-            update_employeeid_tb = new TextBox();
             update_clientid_tb = new TextBox();
-            label8 = new Label();
             label6 = new Label();
             delete_button = new Button();
             update_button = new Button();
             insert_button = new Button();
             insert_rent_box = new GroupBox();
-            label18 = new Label();
-            insert_employeeidnew_tb = new TextBox();
             insert_end_dtp = new DateTimePicker();
             insert_start_dtp = new DateTimePicker();
             label15 = new Label();
@@ -81,8 +78,6 @@
             insert_table_button = new Button();
             insert_cancel_button = new Button();
             label1 = new Label();
-            buttonIncreaseWidth = new Button();
-            buttonResetSize = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -92,15 +87,39 @@
             insert_rent_box.SuspendLayout();
             SuspendLayout();
             // 
+            // buttonResetSize
+            // 
+            buttonResetSize.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            buttonResetSize.ForeColor = SystemColors.ControlText;
+            buttonResetSize.Location = new Point(601, 0);
+            buttonResetSize.Name = "buttonResetSize";
+            buttonResetSize.Size = new Size(125, 46);
+            buttonResetSize.TabIndex = 53;
+            buttonResetSize.Text = "Скрыть таблицы";
+            buttonResetSize.UseVisualStyleBackColor = true;
+            buttonResetSize.Click += buttonResetSize_Click;
+            // 
+            // buttonIncreaseWidth
+            // 
+            buttonIncreaseWidth.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            buttonIncreaseWidth.ForeColor = SystemColors.ControlText;
+            buttonIncreaseWidth.Location = new Point(471, 0);
+            buttonIncreaseWidth.Name = "buttonIncreaseWidth";
+            buttonIncreaseWidth.Size = new Size(125, 46);
+            buttonIncreaseWidth.TabIndex = 52;
+            buttonIncreaseWidth.Text = "Открыть таблицы";
+            buttonIncreaseWidth.UseVisualStyleBackColor = true;
+            buttonIncreaseWidth.Click += buttonIncreaseWidth_Click;
+            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.OldLace;
             label2.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label2.Location = new Point(114, 16);
+            label2.Location = new Point(106, 10);
             label2.Name = "label2";
             label2.Size = new Size(241, 29);
-            label2.TabIndex = 24;
+            label2.TabIndex = 51;
             label2.Text = "Таблица: Прокаты";
             // 
             // to_back_button
@@ -109,10 +128,10 @@
             to_back_button.Cursor = Cursors.Hand;
             to_back_button.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             to_back_button.ForeColor = Color.OliveDrab;
-            to_back_button.Location = new Point(4, 6);
+            to_back_button.Location = new Point(-4, 0);
             to_back_button.Name = "to_back_button";
             to_back_button.Size = new Size(121, 45);
-            to_back_button.TabIndex = 23;
+            to_back_button.TabIndex = 50;
             to_back_button.Text = "<-назад";
             to_back_button.TextAlign = ContentAlignment.MiddleCenter;
             to_back_button.Click += to_back_button_Click;
@@ -135,17 +154,17 @@
             panel1.Controls.Add(insert_button);
             panel1.Controls.Add(insert_rent_box);
             panel1.ForeColor = Color.FromArgb(224, 224, 224);
-            panel1.Location = new Point(4, 54);
+            panel1.Location = new Point(-4, 48);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1506, 496);
-            panel1.TabIndex = 22;
+            panel1.Size = new Size(1654, 496);
+            panel1.TabIndex = 49;
             // 
             // label17
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label17.ForeColor = Color.Olive;
-            label17.Location = new Point(919, 334);
+            label17.Location = new Point(939, 329);
             label17.Name = "label17";
             label17.Size = new Size(146, 21);
             label17.TabIndex = 45;
@@ -156,7 +175,7 @@
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label16.ForeColor = Color.Olive;
-            label16.Location = new Point(919, 171);
+            label16.Location = new Point(939, 166);
             label16.Name = "label16";
             label16.Size = new Size(169, 21);
             label16.TabIndex = 44;
@@ -167,7 +186,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label12.ForeColor = Color.Olive;
-            label12.Location = new Point(919, 8);
+            label12.Location = new Point(939, 3);
             label12.Name = "label12";
             label12.Size = new Size(146, 21);
             label12.TabIndex = 43;
@@ -177,15 +196,15 @@
             // 
             dataGridView3.BackgroundColor = Color.Teal;
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(224, 224, 224);
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dataGridView3.DefaultCellStyle = dataGridViewCellStyle5;
-            dataGridView3.Location = new Point(919, 358);
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataGridView3.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView3.Location = new Point(939, 353);
             dataGridView3.Margin = new Padding(3, 2, 3, 2);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.RowHeadersWidth = 51;
@@ -196,15 +215,15 @@
             // 
             dataGridView2.BackgroundColor = Color.DarkCyan;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(224, 224, 224);
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dataGridView2.DefaultCellStyle = dataGridViewCellStyle6;
-            dataGridView2.Location = new Point(919, 194);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView2.Location = new Point(939, 189);
             dataGridView2.Margin = new Padding(3, 2, 3, 2);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
@@ -219,15 +238,15 @@
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.BackgroundColor = Color.CadetBlue;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = SystemColors.Window;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(224, 224, 224);
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
-            dataGridView1.Location = new Point(916, 31);
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView1.Location = new Point(936, 26);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
@@ -240,16 +259,9 @@
             rentDGV.AllowUserToDeleteRows = false;
             rentDGV.AllowUserToResizeColumns = false;
             rentDGV.AllowUserToResizeRows = false;
+            rentDGV.BackgroundColor = Color.CornflowerBlue;
             rentDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             rentDGV.Columns.AddRange(new DataGridViewColumn[] { rentid, clientid, employeeid, carid, start_date, end_date });
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle8.ForeColor = Color.FromArgb(224, 224, 224);
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            rentDGV.DefaultCellStyle = dataGridViewCellStyle8;
             rentDGV.GridColor = SystemColors.WindowText;
             rentDGV.Location = new Point(8, 3);
             rentDGV.Name = "rentDGV";
@@ -257,7 +269,6 @@
             rentDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             rentDGV.Size = new Size(719, 256);
             rentDGV.TabIndex = 19;
-            rentDGV.CellContentClick += employeeDGV_CellContentClick;
             // 
             // rentid
             // 
@@ -321,25 +332,22 @@
             update_rent_box.Controls.Add(update_carid_tb);
             update_rent_box.Controls.Add(label7);
             update_rent_box.Controls.Add(label9);
-            update_rent_box.Controls.Add(update_employeeid_tb);
             update_rent_box.Controls.Add(update_clientid_tb);
-            update_rent_box.Controls.Add(label8);
             update_rent_box.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             update_rent_box.ForeColor = Color.Black;
             update_rent_box.Location = new Point(394, 265);
             update_rent_box.Name = "update_rent_box";
-            update_rent_box.Size = new Size(510, 225);
+            update_rent_box.Size = new Size(413, 225);
             update_rent_box.TabIndex = 16;
             update_rent_box.TabStop = false;
             update_rent_box.Text = "Изменение";
-            update_rent_box.Enter += update_rent_box_Enter;
             // 
             // update_end_dtp
             // 
-            update_end_dtp.Location = new Point(259, 95);
+            update_end_dtp.Location = new Point(211, 96);
             update_end_dtp.Margin = new Padding(3, 2, 3, 2);
             update_end_dtp.Name = "update_end_dtp";
-            update_end_dtp.Size = new Size(235, 29);
+            update_end_dtp.Size = new Size(180, 29);
             update_end_dtp.TabIndex = 42;
             // 
             // update_start_dtp
@@ -347,7 +355,7 @@
             update_start_dtp.Location = new Point(8, 95);
             update_start_dtp.Margin = new Padding(3, 2, 3, 2);
             update_start_dtp.Name = "update_start_dtp";
-            update_start_dtp.Size = new Size(235, 29);
+            update_start_dtp.Size = new Size(178, 29);
             update_start_dtp.TabIndex = 29;
             // 
             // label11
@@ -374,7 +382,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label3.ForeColor = Color.DarkGreen;
-            label3.Location = new Point(257, 73);
+            label3.Location = new Point(211, 75);
             label3.Name = "label3";
             label3.Size = new Size(195, 21);
             label3.TabIndex = 39;
@@ -385,7 +393,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label5.ForeColor = Color.DarkGreen;
-            label5.Location = new Point(387, 20);
+            label5.Location = new Point(275, 20);
             label5.Name = "label5";
             label5.Size = new Size(97, 21);
             label5.TabIndex = 37;
@@ -397,7 +405,7 @@
             update_cancel_button.ForeColor = SystemColors.ControlText;
             update_cancel_button.Location = new Point(9, 164);
             update_cancel_button.Name = "update_cancel_button";
-            update_cancel_button.Size = new Size(245, 45);
+            update_cancel_button.Size = new Size(177, 45);
             update_cancel_button.TabIndex = 29;
             update_cancel_button.Text = "Отменить";
             update_cancel_button.UseVisualStyleBackColor = true;
@@ -407,9 +415,9 @@
             // 
             update_table_button.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             update_table_button.ForeColor = SystemColors.ControlText;
-            update_table_button.Location = new Point(259, 164);
+            update_table_button.Location = new Point(211, 164);
             update_table_button.Name = "update_table_button";
-            update_table_button.Size = new Size(242, 45);
+            update_table_button.Size = new Size(180, 45);
             update_table_button.TabIndex = 28;
             update_table_button.Text = "Изменить";
             update_table_button.UseVisualStyleBackColor = true;
@@ -417,7 +425,7 @@
             // 
             // update_carid_tb
             // 
-            update_carid_tb.Location = new Point(387, 44);
+            update_carid_tb.Location = new Point(275, 43);
             update_carid_tb.Name = "update_carid_tb";
             update_carid_tb.Size = new Size(112, 29);
             update_carid_tb.TabIndex = 36;
@@ -427,11 +435,11 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label7.ForeColor = Color.DarkGreen;
-            label7.Location = new Point(251, 20);
+            label7.Location = new Point(136, 20);
             label7.Name = "label7";
-            label7.Size = new Size(118, 21);
+            label7.Size = new Size(93, 21);
             label7.TabIndex = 35;
-            label7.Text = "ID Сотрудника";
+            label7.Text = "ID Клиента";
             // 
             // label9
             // 
@@ -444,30 +452,12 @@
             label9.TabIndex = 31;
             label9.Text = "Дата начала проката";
             // 
-            // update_employeeid_tb
-            // 
-            update_employeeid_tb.Location = new Point(257, 44);
-            update_employeeid_tb.Name = "update_employeeid_tb";
-            update_employeeid_tb.Size = new Size(112, 29);
-            update_employeeid_tb.TabIndex = 34;
-            // 
             // update_clientid_tb
             // 
-            update_clientid_tb.Location = new Point(131, 44);
+            update_clientid_tb.Location = new Point(139, 44);
             update_clientid_tb.Name = "update_clientid_tb";
             update_clientid_tb.Size = new Size(112, 29);
-            update_clientid_tb.TabIndex = 32;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label8.ForeColor = Color.DarkGreen;
-            label8.Location = new Point(131, 20);
-            label8.Name = "label8";
-            label8.Size = new Size(93, 21);
-            label8.TabIndex = 33;
-            label8.Text = "ID Клиента";
+            update_clientid_tb.TabIndex = 34;
             // 
             // label6
             // 
@@ -519,8 +509,6 @@
             // insert_rent_box
             // 
             insert_rent_box.BackColor = Color.LightSteelBlue;
-            insert_rent_box.Controls.Add(label18);
-            insert_rent_box.Controls.Add(insert_employeeidnew_tb);
             insert_rent_box.Controls.Add(insert_end_dtp);
             insert_rent_box.Controls.Add(insert_start_dtp);
             insert_rent_box.Controls.Add(label15);
@@ -539,26 +527,6 @@
             insert_rent_box.TabIndex = 18;
             insert_rent_box.TabStop = false;
             insert_rent_box.Text = "Добавление";
-            insert_rent_box.Enter += insert_rent_box_Enter;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label18.ForeColor = Color.DarkGreen;
-            label18.Location = new Point(134, 20);
-            label18.Name = "label18";
-            label18.Size = new Size(93, 21);
-            label18.TabIndex = 30;
-            label18.Text = "ID Клиента";
-            // 
-            // insert_employeeidnew_tb
-            // 
-            insert_employeeidnew_tb.Location = new Point(134, 44);
-            insert_employeeidnew_tb.Name = "insert_employeeidnew_tb";
-            insert_employeeidnew_tb.Size = new Size(112, 29);
-            insert_employeeidnew_tb.TabIndex = 29;
-            insert_employeeidnew_tb.TextChanged += textBox1_TextChanged;
             // 
             // insert_end_dtp
             // 
@@ -586,7 +554,6 @@
             label15.Size = new Size(195, 21);
             label15.TabIndex = 27;
             label15.Text = "Дата окончания проката";
-            label15.Click += label15_Click;
             // 
             // label14
             // 
@@ -665,51 +632,26 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label1.BackColor = Color.OldLace;
             label1.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label1.Location = new Point(4, 6);
+            label1.Location = new Point(-4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(1506, 45);
-            label1.TabIndex = 21;
+            label1.Size = new Size(1654, 45);
+            label1.TabIndex = 48;
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // buttonIncreaseWidth
-            // 
-            buttonIncreaseWidth.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonIncreaseWidth.ForeColor = SystemColors.ControlText;
-            buttonIncreaseWidth.Location = new Point(479, 6);
-            buttonIncreaseWidth.Name = "buttonIncreaseWidth";
-            buttonIncreaseWidth.Size = new Size(125, 46);
-            buttonIncreaseWidth.TabIndex = 46;
-            buttonIncreaseWidth.Text = "Открыть таблицы";
-            buttonIncreaseWidth.UseVisualStyleBackColor = true;
-            buttonIncreaseWidth.Click += buttonIncreaseWidth_Click;
-            // 
-            // buttonResetSize
-            // 
-            buttonResetSize.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonResetSize.ForeColor = SystemColors.ControlText;
-            buttonResetSize.Location = new Point(609, 6);
-            buttonResetSize.Name = "buttonResetSize";
-            buttonResetSize.Size = new Size(125, 46);
-            buttonResetSize.TabIndex = 47;
-            buttonResetSize.Text = "Скрыть таблицы";
-            buttonResetSize.UseVisualStyleBackColor = true;
-            buttonResetSize.Click += buttonResetSize_Click;
-            // 
-            // AdminRentForm
+            // EmployeeRentForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1348, 554);
+            ClientSize = new Size(1496, 554);
             Controls.Add(buttonResetSize);
             Controls.Add(buttonIncreaseWidth);
             Controls.Add(label2);
             Controls.Add(to_back_button);
             Controls.Add(panel1);
             Controls.Add(label1);
-            Name = "AdminRentForm";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "AdminRentForm";
-            Load += AdminRentForm_Load;
+            Name = "EmployeeRentForm";
+            Text = "EmployeeRentForm";
+            Load += EmployeeRentForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
@@ -726,27 +668,27 @@
 
         #endregion
 
+        private Button buttonResetSize;
+        private Button buttonIncreaseWidth;
         private Label label2;
         private Label to_back_button;
         private Panel panel1;
+        private Label label17;
+        private Label label16;
+        private Label label12;
+        private DataGridView dataGridView3;
+        private DataGridView dataGridView2;
+        private DataGridView dataGridView1;
         private DataGridView rentDGV;
+        private DataGridViewTextBoxColumn rentid;
+        private DataGridViewTextBoxColumn clientid;
+        private DataGridViewTextBoxColumn employeeid;
+        private DataGridViewTextBoxColumn carid;
+        private DataGridViewTextBoxColumn start_date;
+        private DataGridViewTextBoxColumn end_date;
         private GroupBox update_rent_box;
-        private Label label6;
-        private Button delete_button;
-        private Button update_button;
-        private Button insert_button;
-        private GroupBox insert_rent_box;
-        private Label label4;
-        private TextBox insert_clientid_tb;
-        private Label label10;
-        private Button insert_table_button;
-        private Button insert_cancel_button;
-        private Label label1;
-        private Label label15;
-        private Label label14;
-        private TextBox insert_carid_tb;
-        private Label label13;
-        private TextBox insert_employeeid_tb;
+        private DateTimePicker update_end_dtp;
+        private DateTimePicker update_start_dtp;
         private Label label11;
         private TextBox update_rentid_tb;
         private Label label3;
@@ -756,28 +698,22 @@
         private TextBox update_carid_tb;
         private Label label7;
         private Label label9;
-        private TextBox update_employeeid_tb;
         private TextBox update_clientid_tb;
-        private Label label8;
-        private DataGridViewTextBoxColumn rentid;
-        private DataGridViewTextBoxColumn clientid;
-        private DataGridViewTextBoxColumn employeeid;
-        private DataGridViewTextBoxColumn carid;
-        private DataGridViewTextBoxColumn start_date;
-        private DataGridViewTextBoxColumn end_date;
-        private DateTimePicker update_end_dtp;
-        private DateTimePicker update_start_dtp;
+        private Label label6;
+        private Button delete_button;
+        private Button update_button;
+        private Button insert_button;
+        private GroupBox insert_rent_box;
         private DateTimePicker insert_end_dtp;
         private DateTimePicker insert_start_dtp;
-        private DataGridView dataGridView3;
-        private DataGridView dataGridView2;
-        private DataGridView dataGridView1;
-        private Label label17;
-        private Label label16;
-        private Label label12;
-        private Button buttonIncreaseWidth;
-        private Button buttonResetSize;
-        private Label label18;
-        private TextBox insert_employeeidnew_tb;
+        private Label label15;
+        private Label label14;
+        private TextBox insert_carid_tb;
+        private Label label4;
+        private TextBox insert_clientid_tb;
+        private Label label10;
+        private Button insert_table_button;
+        private Button insert_cancel_button;
+        private Label label1;
     }
 }

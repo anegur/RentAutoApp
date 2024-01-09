@@ -247,5 +247,10 @@ namespace WinFormsApp1
         {
 
         }
+
+        private void clientDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -78,9 +78,9 @@
             label2.AutoSize = true;
             label2.BackColor = Color.OldLace;
             label2.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label2.Location = new Point(115, 9);
+            label2.Location = new Point(101, 7);
             label2.Name = "label2";
-            label2.Size = new Size(297, 36);
+            label2.Size = new Size(246, 29);
             label2.TabIndex = 16;
             label2.Text = "Таблица: Клиенты";
             // 
@@ -90,9 +90,9 @@
             to_back_button.Cursor = Cursors.Hand;
             to_back_button.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             to_back_button.ForeColor = Color.OliveDrab;
-            to_back_button.Location = new Point(-10, -4);
+            to_back_button.Location = new Point(-9, -3);
             to_back_button.Name = "to_back_button";
-            to_back_button.Size = new Size(138, 60);
+            to_back_button.Size = new Size(121, 45);
             to_back_button.TabIndex = 15;
             to_back_button.Text = "<-назад";
             to_back_button.TextAlign = ContentAlignment.MiddleCenter;
@@ -110,10 +110,9 @@
             panel1.Controls.Add(insert_button);
             panel1.Controls.Add(insert_client_box);
             panel1.ForeColor = Color.FromArgb(224, 224, 224);
-            panel1.Location = new Point(-10, 60);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(-9, 45);
             panel1.Name = "panel1";
-            panel1.Size = new Size(906, 672);
+            panel1.Size = new Size(793, 504);
             panel1.TabIndex = 14;
             // 
             // clientDGV
@@ -133,13 +132,13 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             clientDGV.DefaultCellStyle = dataGridViewCellStyle1;
             clientDGV.GridColor = SystemColors.WindowText;
-            clientDGV.Location = new Point(16, 4);
-            clientDGV.Margin = new Padding(3, 4, 3, 4);
+            clientDGV.Location = new Point(14, 3);
             clientDGV.Name = "clientDGV";
             clientDGV.RowHeadersWidth = 51;
             clientDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            clientDGV.Size = new Size(645, 341);
+            clientDGV.Size = new Size(564, 256);
             clientDGV.TabIndex = 19;
+            clientDGV.CellContentClick += clientDGV_CellContentClick;
             // 
             // clientid
             // 
@@ -198,11 +197,9 @@
             update_client_box.Controls.Add(update_numb_tb);
             update_client_box.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             update_client_box.ForeColor = Color.Black;
-            update_client_box.Location = new Point(451, 353);
-            update_client_box.Margin = new Padding(3, 4, 3, 4);
+            update_client_box.Location = new Point(395, 265);
             update_client_box.Name = "update_client_box";
-            update_client_box.Padding = new Padding(3, 4, 3, 4);
-            update_client_box.Size = new Size(432, 315);
+            update_client_box.Size = new Size(378, 236);
             update_client_box.TabIndex = 16;
             update_client_box.TabStop = false;
             update_client_box.Text = "Изменение";
@@ -212,9 +209,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label5.ForeColor = Color.DarkGreen;
-            label5.Location = new Point(223, 27);
+            label5.Location = new Point(195, 20);
             label5.Name = "label5";
-            label5.Size = new Size(83, 28);
+            label5.Size = new Size(67, 21);
             label5.TabIndex = 23;
             label5.Text = "Пароль";
             // 
@@ -223,19 +220,18 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label3.ForeColor = Color.DarkGreen;
-            label3.Location = new Point(8, 172);
+            label3.Location = new Point(7, 129);
             label3.Name = "label3";
-            label3.Size = new Size(77, 28);
+            label3.Size = new Size(63, 21);
             label3.TabIndex = 20;
             label3.Text = "Е-мэил";
             // 
             // update_pass_tb
             // 
-            update_pass_tb.Location = new Point(223, 59);
-            update_pass_tb.Margin = new Padding(3, 4, 3, 4);
+            update_pass_tb.Location = new Point(195, 44);
             update_pass_tb.MaxLength = 12;
             update_pass_tb.Name = "update_pass_tb";
-            update_pass_tb.Size = new Size(198, 34);
+            update_pass_tb.Size = new Size(174, 29);
             update_pass_tb.TabIndex = 22;
             update_pass_tb.TextChanged += textBox1_TextChanged;
             // 
@@ -244,9 +240,9 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label11.ForeColor = Color.DarkGreen;
-            label11.Location = new Point(223, 171);
+            label11.Location = new Point(195, 128);
             label11.Name = "label11";
-            label11.Size = new Size(174, 28);
+            label11.Size = new Size(140, 21);
             label11.TabIndex = 20;
             label11.Text = "Номер телефона";
             // 
@@ -255,18 +251,17 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label7.ForeColor = Color.DarkGreen;
-            label7.Location = new Point(13, 97);
+            label7.Location = new Point(11, 73);
             label7.Name = "label7";
-            label7.Size = new Size(58, 28);
+            label7.Size = new Size(46, 21);
             label7.TabIndex = 20;
             label7.Text = "ФИО";
             // 
             // update_clientid_tb
             // 
-            update_clientid_tb.Location = new Point(13, 59);
-            update_clientid_tb.Margin = new Padding(3, 4, 3, 4);
+            update_clientid_tb.Location = new Point(11, 44);
             update_clientid_tb.Name = "update_clientid_tb";
-            update_clientid_tb.Size = new Size(113, 34);
+            update_clientid_tb.Size = new Size(99, 29);
             update_clientid_tb.TabIndex = 22;
             // 
             // label12
@@ -274,28 +269,26 @@
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label12.ForeColor = Color.DarkGreen;
-            label12.Location = new Point(8, 27);
+            label12.Location = new Point(7, 20);
             label12.Name = "label12";
-            label12.Size = new Size(114, 28);
+            label12.Size = new Size(90, 21);
             label12.TabIndex = 21;
             label12.Text = "ID клиента";
             // 
             // update_fio_tb
             // 
-            update_fio_tb.Location = new Point(13, 129);
-            update_fio_tb.Margin = new Padding(3, 4, 3, 4);
+            update_fio_tb.Location = new Point(11, 97);
             update_fio_tb.Name = "update_fio_tb";
-            update_fio_tb.Size = new Size(409, 34);
+            update_fio_tb.Size = new Size(358, 29);
             update_fio_tb.TabIndex = 18;
             // 
             // update_table_button
             // 
             update_table_button.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             update_table_button.ForeColor = SystemColors.ControlText;
-            update_table_button.Location = new Point(222, 249);
-            update_table_button.Margin = new Padding(3, 4, 3, 4);
+            update_table_button.Location = new Point(194, 187);
             update_table_button.Name = "update_table_button";
-            update_table_button.Size = new Size(200, 60);
+            update_table_button.Size = new Size(175, 45);
             update_table_button.TabIndex = 17;
             update_table_button.Text = "Изменить";
             update_table_button.UseVisualStyleBackColor = true;
@@ -305,10 +298,9 @@
             // 
             update_cancel_button.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             update_cancel_button.ForeColor = SystemColors.ControlText;
-            update_cancel_button.Location = new Point(13, 249);
-            update_cancel_button.Margin = new Padding(3, 4, 3, 4);
+            update_cancel_button.Location = new Point(11, 187);
             update_cancel_button.Name = "update_cancel_button";
-            update_cancel_button.Size = new Size(201, 60);
+            update_cancel_button.Size = new Size(176, 45);
             update_cancel_button.TabIndex = 17;
             update_cancel_button.Text = "Отменить";
             update_cancel_button.UseVisualStyleBackColor = true;
@@ -316,18 +308,16 @@
             // 
             // update_email_tb
             // 
-            update_email_tb.Location = new Point(13, 201);
-            update_email_tb.Margin = new Padding(3, 4, 3, 4);
+            update_email_tb.Location = new Point(11, 151);
             update_email_tb.Name = "update_email_tb";
-            update_email_tb.Size = new Size(201, 34);
+            update_email_tb.Size = new Size(176, 29);
             update_email_tb.TabIndex = 2;
             // 
             // update_numb_tb
             // 
-            update_numb_tb.Location = new Point(223, 203);
-            update_numb_tb.Margin = new Padding(3, 4, 3, 4);
+            update_numb_tb.Location = new Point(195, 152);
             update_numb_tb.Name = "update_numb_tb";
-            update_numb_tb.Size = new Size(198, 34);
+            update_numb_tb.Size = new Size(174, 29);
             update_numb_tb.TabIndex = 1;
             update_numb_tb.TextChanged += update_numb_tb_TextChanged;
             // 
@@ -336,9 +326,9 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label6.ForeColor = SystemColors.ControlDarkDark;
-            label6.Location = new Point(738, 17);
+            label6.Location = new Point(646, 13);
             label6.Name = "label6";
-            label6.Size = new Size(91, 28);
+            label6.Size = new Size(72, 21);
             label6.TabIndex = 18;
             label6.Text = "Вкладки";
             // 
@@ -346,10 +336,9 @@
             // 
             delete_button.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             delete_button.ForeColor = Color.Maroon;
-            delete_button.Location = new Point(667, 251);
-            delete_button.Margin = new Padding(3, 4, 3, 4);
+            delete_button.Location = new Point(584, 188);
             delete_button.Name = "delete_button";
-            delete_button.Size = new Size(218, 60);
+            delete_button.Size = new Size(191, 45);
             delete_button.TabIndex = 15;
             delete_button.Text = "Удалить";
             delete_button.UseVisualStyleBackColor = true;
@@ -359,10 +348,9 @@
             // 
             update_button.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             update_button.ForeColor = SystemColors.ControlText;
-            update_button.Location = new Point(667, 117);
-            update_button.Margin = new Padding(3, 4, 3, 4);
+            update_button.Location = new Point(584, 88);
             update_button.Name = "update_button";
-            update_button.Size = new Size(218, 60);
+            update_button.Size = new Size(191, 45);
             update_button.TabIndex = 14;
             update_button.Text = "Изменить";
             update_button.UseVisualStyleBackColor = true;
@@ -372,10 +360,9 @@
             // 
             insert_button.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             insert_button.ForeColor = SystemColors.ControlText;
-            insert_button.Location = new Point(667, 51);
-            insert_button.Margin = new Padding(3, 4, 3, 4);
+            insert_button.Location = new Point(584, 38);
             insert_button.Name = "insert_button";
-            insert_button.Size = new Size(218, 60);
+            insert_button.Size = new Size(191, 45);
             insert_button.TabIndex = 13;
             insert_button.Text = "Добавить";
             insert_button.UseVisualStyleBackColor = true;
@@ -396,11 +383,9 @@
             insert_client_box.Controls.Add(insert_numb_tb);
             insert_client_box.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             insert_client_box.ForeColor = Color.Black;
-            insert_client_box.Location = new Point(9, 353);
-            insert_client_box.Margin = new Padding(3, 4, 3, 4);
+            insert_client_box.Location = new Point(8, 265);
             insert_client_box.Name = "insert_client_box";
-            insert_client_box.Padding = new Padding(3, 4, 3, 4);
-            insert_client_box.Size = new Size(435, 315);
+            insert_client_box.Size = new Size(381, 236);
             insert_client_box.TabIndex = 18;
             insert_client_box.TabStop = false;
             insert_client_box.Text = "Добавление";
@@ -411,18 +396,17 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label4.ForeColor = Color.DarkGreen;
-            label4.Location = new Point(221, 27);
+            label4.Location = new Point(193, 20);
             label4.Name = "label4";
-            label4.Size = new Size(83, 28);
+            label4.Size = new Size(67, 21);
             label4.TabIndex = 21;
             label4.Text = "Пароль";
             // 
             // insert_pass_tb
             // 
-            insert_pass_tb.Location = new Point(221, 59);
-            insert_pass_tb.Margin = new Padding(3, 4, 3, 4);
+            insert_pass_tb.Location = new Point(193, 44);
             insert_pass_tb.Name = "insert_pass_tb";
-            insert_pass_tb.Size = new Size(199, 34);
+            insert_pass_tb.Size = new Size(175, 29);
             insert_pass_tb.TabIndex = 20;
             insert_pass_tb.TextChanged += insert_pass_tb_TextChanged;
             // 
@@ -431,28 +415,26 @@
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label10.ForeColor = Color.DarkGreen;
-            label10.Location = new Point(15, 97);
+            label10.Location = new Point(13, 73);
             label10.Name = "label10";
-            label10.Size = new Size(58, 28);
+            label10.Size = new Size(46, 21);
             label10.TabIndex = 19;
             label10.Text = "ФИО";
             // 
             // insert_fio_tb
             // 
-            insert_fio_tb.Location = new Point(9, 129);
-            insert_fio_tb.Margin = new Padding(3, 4, 3, 4);
+            insert_fio_tb.Location = new Point(8, 97);
             insert_fio_tb.Name = "insert_fio_tb";
-            insert_fio_tb.Size = new Size(411, 34);
+            insert_fio_tb.Size = new Size(360, 29);
             insert_fio_tb.TabIndex = 18;
             // 
             // insert_table_button
             // 
             insert_table_button.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             insert_table_button.ForeColor = SystemColors.ControlText;
-            insert_table_button.Location = new Point(221, 251);
-            insert_table_button.Margin = new Padding(3, 4, 3, 4);
+            insert_table_button.Location = new Point(193, 188);
             insert_table_button.Name = "insert_table_button";
-            insert_table_button.Size = new Size(200, 60);
+            insert_table_button.Size = new Size(175, 45);
             insert_table_button.TabIndex = 17;
             insert_table_button.Text = "Добавить";
             insert_table_button.UseVisualStyleBackColor = true;
@@ -462,10 +444,9 @@
             // 
             insert_cancel_button.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             insert_cancel_button.ForeColor = SystemColors.ControlText;
-            insert_cancel_button.Location = new Point(7, 249);
-            insert_cancel_button.Margin = new Padding(3, 4, 3, 4);
+            insert_cancel_button.Location = new Point(6, 187);
             insert_cancel_button.Name = "insert_cancel_button";
-            insert_cancel_button.Size = new Size(201, 60);
+            insert_cancel_button.Size = new Size(176, 45);
             insert_cancel_button.TabIndex = 17;
             insert_cancel_button.Text = "Отменить";
             insert_cancel_button.UseVisualStyleBackColor = true;
@@ -476,9 +457,9 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label8.ForeColor = Color.DarkGreen;
-            label8.Location = new Point(7, 173);
+            label8.Location = new Point(6, 130);
             label8.Name = "label8";
-            label8.Size = new Size(77, 28);
+            label8.Size = new Size(63, 21);
             label8.TabIndex = 4;
             label8.Text = "Е-мэил";
             // 
@@ -487,26 +468,24 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label9.ForeColor = Color.DarkGreen;
-            label9.Location = new Point(221, 172);
+            label9.Location = new Point(193, 129);
             label9.Name = "label9";
-            label9.Size = new Size(174, 28);
+            label9.Size = new Size(140, 21);
             label9.TabIndex = 3;
             label9.Text = "Номер телефона";
             // 
             // insert_mail_tb
             // 
-            insert_mail_tb.Location = new Point(9, 205);
-            insert_mail_tb.Margin = new Padding(3, 4, 3, 4);
+            insert_mail_tb.Location = new Point(8, 154);
             insert_mail_tb.Name = "insert_mail_tb";
-            insert_mail_tb.Size = new Size(198, 34);
+            insert_mail_tb.Size = new Size(174, 29);
             insert_mail_tb.TabIndex = 1;
             // 
             // insert_numb_tb
             // 
-            insert_numb_tb.Location = new Point(221, 205);
-            insert_numb_tb.Margin = new Padding(3, 4, 3, 4);
+            insert_numb_tb.Location = new Point(193, 154);
             insert_numb_tb.Name = "insert_numb_tb";
-            insert_numb_tb.Size = new Size(201, 34);
+            insert_numb_tb.Size = new Size(176, 29);
             insert_numb_tb.TabIndex = 0;
             // 
             // label1
@@ -514,22 +493,21 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label1.BackColor = Color.OldLace;
             label1.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label1.Location = new Point(-10, -4);
+            label1.Location = new Point(-9, -3);
             label1.Name = "label1";
-            label1.Size = new Size(906, 60);
+            label1.Size = new Size(793, 45);
             label1.TabIndex = 13;
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // AdminClientForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(886, 728);
+            ClientSize = new Size(775, 546);
             Controls.Add(label2);
             Controls.Add(to_back_button);
             Controls.Add(panel1);
             Controls.Add(label1);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "AdminClientForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminClientForm";

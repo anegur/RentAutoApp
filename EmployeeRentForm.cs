@@ -10,37 +10,27 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
-    public partial class AdminRentForm : Form
+    public partial class EmployeeRentForm : Form
     {
-        public AdminRentForm()
+        private string employeeIdAuto;
+        public EmployeeRentForm(string employeeIdAuto1)
         {
             InitializeComponent();
             this.FormClosing += Form_FormClosing;
+            employeeIdAuto = employeeIdAuto1;
+        }
+        public bool ChekEmployee()
+        {
+            int employeeIdInt = (int)rentDGV.CurrentRow.Cells[2].Value;
+            string employeeid1 = employeeIdInt.ToString();
+            return employeeid1 == employeeIdAuto;
 
-            //comboBoxEmployee.DataSource = ClientTable.GetTable(); // GetClients() - ваш метод для получения данных из таблицы "Client"
-            //comboBoxEmployee.DisplayMember = "ClientName"; // Замените "ClientName" на поле, которое вы хотите отображать
-            //comboBoxEmployee.ValueMember = "ClientId"; // Замените "ClientId" на поле с идентификатором
         }
         private void Form_FormClosing(object? sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void update_end_date_tb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void employeeDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void AdminRentForm_Load(object sender, EventArgs e)
+        private void EmployeeRentForm_Load(object sender, EventArgs e)
         {
             insert_rent_box.Visible = false;
             update_rent_box.Visible = false;
@@ -88,7 +78,7 @@ namespace WinFormsApp1
 
             update_rentid_tb.Text = rentid;
             update_clientid_tb.Text = clientid;
-            update_employeeid_tb.Text = employeeid;
+            //update_clientid_tb.Text = employeeid;
             update_carid_tb.Text = carid;
             update_start_dtp.Value = start_date;
             update_end_dtp.Value = end_date;
@@ -96,21 +86,25 @@ namespace WinFormsApp1
 
         private void delete_button_Click(object sender, EventArgs e)
         {
-            try
+            if (ChekEmployee())
             {
-                int rentid = (int)rentDGV.CurrentRow.Cells[0].Value;
-                DialogResult dr = Messages.DisplayQuestionMessage("Вы действительно хотите удалить данные? Они могут быть связаны");
-                if (dr == DialogResult.Yes)
+                try
                 {
-                    RentTable.Delete(rentid);
-                    rentDGV.DataSource = RentTable.GetTable();
-                    Messages.DisplayInfoMessage("Данные успешно удалены!");
+                    int rentid = (int)rentDGV.CurrentRow.Cells[0].Value;
+                    DialogResult dr = Messages.DisplayQuestionMessage("Вы действительно хотите удалить данные? Они могут быть связаны");
+                    if (dr == DialogResult.Yes)
+                    {
+                        RentTable.Delete(rentid);
+                        rentDGV.DataSource = RentTable.GetTable();
+                        Messages.DisplayInfoMessage("Данные успешно удалены!");
+                    }
+                }
+                catch
+                {
+                    Messages.DisplayErrorMessage("Ошибка при удалении данных!");
                 }
             }
-            catch
-            {
-                Messages.DisplayErrorMessage("Ошибка при удалении данных!");
-            }
+            else { Messages.DisplayErrorMessage("Вы не можете удалить чужие записи!"); }
         }
 
         private void insert_rent_box_Enter(object sender, EventArgs e)
@@ -125,8 +119,11 @@ namespace WinFormsApp1
 
         private void insert_table_button_Click(object sender, EventArgs e)
         {
+            //int employeeid = (int)rentDGV.CurrentRow.Cells[2].Value;
+            string employeeid1 = employeeIdAuto;
+
             string clientid = insert_clientid_tb.Text;
-            string employeeid = insert_employeeidnew_tb.Text;
+            //string employeeid = insert_employeeid_tb.Text;
             string carid = insert_carid_tb.Text;
             DateTime start_date = insert_start_dtp.Value;
             DateTime end_date = insert_end_dtp.Value;
@@ -138,13 +135,13 @@ namespace WinFormsApp1
             //int selectedEmployeeId = Convert.ToInt32(comboBoxEmployee.SelectedValue);
             // Ваш код добавления записи в таблицу "Rent" с использованием selectedEmployeeIdint Selected
 
-            if (employeeid == "" || clientid == "" || carid == "")
+            if (employeeid1 == "" || clientid == "" || carid == "")
             {
                 Messages.DisplayErrorMessage("Заполните все поля!");
                 return;
             }
 
-            if (!Int32.TryParse(employeeid, out employeeId))
+            if (!Int32.TryParse(employeeid1, out employeeId))
             {
                 Messages.DisplayErrorMessage("Ошибка ввода айди сотрудника!");
                 return;
@@ -162,11 +159,11 @@ namespace WinFormsApp1
                 return;
             }
 
-            Messages.DisplayInfoMessage($"Selected Employee ID: {employeeId}");
+            //Messages.DisplayInfoMessage($"Selected Employee ID: {employeeId}");
 
             if (RentTable.Insert(clientId, employeeId, carId, start_date, end_date))
             {
-                insert_employeeid_tb.Text = "";
+                //insert_employeeidnew_tb.Text = "";
                 insert_clientid_tb.Text = "";
                 insert_carid_tb.Text = "";
 
@@ -181,8 +178,11 @@ namespace WinFormsApp1
 
         private void update_table_button_Click(object sender, EventArgs e)
         {
-            string rentid = update_carid_tb.Text;
-            string employeeid = update_employeeid_tb.Text;
+            int employeeid = (int)rentDGV.CurrentRow.Cells[2].Value;
+            string employeeid1 = employeeid.ToString();
+
+            string rentid = update_rentid_tb.Text;
+            //string employeeid = update_employeeid_tb.Text;
             string clientid = update_clientid_tb.Text;
             string carid = update_carid_tb.Text;
             DateTime start_date = update_start_dtp.Value;
@@ -192,7 +192,7 @@ namespace WinFormsApp1
             int clientId;
             int carId;
 
-            if (rentid == "" || employeeid == "" || clientid == "" || carid == "")
+            if (rentid == "" || clientid == "" || carid == "")
             {
                 Messages.DisplayErrorMessage("Заполните все поля!");
                 return;
@@ -204,7 +204,7 @@ namespace WinFormsApp1
                 return;
             }
 
-            if (!Int32.TryParse(employeeid, out employeeId))
+            if (!Int32.TryParse(employeeid1, out employeeId))
             {
                 Messages.DisplayErrorMessage("Ошибка ввода айди сотрудника!");
                 return;
@@ -222,24 +222,39 @@ namespace WinFormsApp1
                 return;
             }
 
-            if (RentTable.IsExistsDriver(rentId))
-            {
-                if (RentTable.Update(rentId, clientId, employeeId, carId, start_date, end_date))
-                {
-                    update_rent_box.Visible = false;
+            // Предположим, у вас есть объект формы EmployeeAuthForm
+            //EmployeeAuthForm authForm = new EmployeeAuthForm();
 
-                    rentDGV.DataSource = RentTable.GetTable();
-                    Messages.DisplayInfoMessage("Данные успешно обновлены!");
+            //// Теперь вы можете получить значение переменной employeeIdAuto через этот объект
+            //string employeeIdFromAuthForm = authForm.employeeIdAuto;
+
+            // Теперь вы можете использовать employeeIdFromAuthForm в текущем контексте
+            if(ChekEmployee())
+            {
+                if (RentTable.IsExistsDriver(rentId))
+                {
+                    if (RentTable.Update(rentId, clientId, employeeId, carId, start_date, end_date))
+                    {
+                        update_rent_box.Visible = false;
+
+                        rentDGV.DataSource = RentTable.GetTable();
+                        Messages.DisplayInfoMessage("Данные успешно обновлены!");
+                    }
+                    else
+                    {
+                        Messages.DisplayErrorMessage("Ошибка при изменении данных!");
+                    }
                 }
                 else
                 {
-                    Messages.DisplayErrorMessage("Ошибка при изменении данных!");
+                    Messages.DisplayErrorMessage("Указанного айди проката не существует!");
                 }
             }
             else
             {
-                Messages.DisplayErrorMessage("Указанного айди проката не существует!");
+                Messages.DisplayErrorMessage("Вы не можете редактировать чужие записи!");
             }
+            
         }
 
         private void insert_cancel_button_Click(object sender, EventArgs e)
@@ -255,7 +270,7 @@ namespace WinFormsApp1
         private void to_back_button_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminForm adminForm = new AdminForm();
+            EmployeeForm adminForm = new EmployeeForm();
             adminForm.Show();
         }
 
@@ -272,11 +287,6 @@ namespace WinFormsApp1
         }
 
         private void comboBoxEmployee_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

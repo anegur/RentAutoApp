@@ -140,7 +140,7 @@
             label1.TabIndex = 8;
             label1.Text = "Панель администратора";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += this.label1_Click;
+            //label1.Click += this.label1_Click;
             // 
             // exitButton
             // 

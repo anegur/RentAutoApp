@@ -12,6 +12,13 @@ namespace WinFormsApp1
 {
     public partial class EmployeeForm : Form
     {
+        private string _employeeName;
+        public EmployeeForm(string employeeIdAuto)
+        {
+            _employeeName = employeeIdAuto;
+            InitializeComponent();
+        }
+
         public EmployeeForm()
         {
             InitializeComponent();
@@ -29,6 +36,13 @@ namespace WinFormsApp1
             Hide();
             EmployeeClientForm employeeClientForm = new EmployeeClientForm();
             employeeClientForm.Show();
+        }
+
+        private void rent_button_Click(object sender, EventArgs e)
+        {
+            Hide();
+            EmployeeRentForm employeeRentForm = new EmployeeRentForm(_employeeName); 
+            employeeRentForm.Show();
         }
     }
 }

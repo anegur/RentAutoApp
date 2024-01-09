@@ -1,5 +1,14 @@
 ﻿using Npgsql;
+using NpgsqlTypes;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 
 namespace WinFormsApp1
@@ -7,6 +16,7 @@ namespace WinFormsApp1
     public partial class EmployeeAuthForm : Form
     {
 
+        public string employeeIdAuto;
         public EmployeeAuthForm()
         {
             InitializeComponent();
@@ -59,10 +69,15 @@ namespace WinFormsApp1
 
             if (table.Rows.Count > 0)
             {
-                this.Hide();
-                AdminForm inspectorForm = new AdminForm();
+                object value = table.Rows[0]["employeeid"];
+                employeeIdAuto = value.ToString();
+                Hide();
+                EmployeeForm inspectorForm = new EmployeeForm(employeeIdAuto);
                 inspectorForm.Show();
-                //Messages.DisplayInfoMessage("Вход успешен");
+                //Отформатируйте строку с использованием переменной employeeIdAuto
+                //string successMessage = $"Вход успешен {employeeIdAuto}";
+                // Выведите отформатированное сообщение
+                //Messages.DisplayInfoMessage(successMessage);
             }
             else
             {
