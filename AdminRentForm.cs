@@ -49,19 +49,19 @@ namespace WinFormsApp1
             dataGridView1.DataSource = ClientTable.GetTable();
             dataGridView2.DataSource = EmployeeTable.GetTable();
             dataGridView3.DataSource = CarTable.GetTable();
-            Width = 1072;
+            Width = 930;
             CenterToScreen();
 
-            if (rentDGV.RowCount < 1)
-            {
-                insert_table_button.Enabled = false;
-                delete_button.Enabled = false;
-            }
-            else
-            {
-                update_table_button.Enabled = true;
-                delete_button.Enabled = true;
-            }
+            //if (rentDGV.RowCount < 1)
+            //{
+            //    insert_table_button.Enabled = false;
+            //    delete_button.Enabled = false;
+            //}
+            //else
+            //{
+            //    update_table_button.Enabled = true;
+            //    delete_button.Enabled = true;
+            //}
         }
 
         private void insert_button_Click(object sender, EventArgs e)
@@ -99,13 +99,10 @@ namespace WinFormsApp1
             try
             {
                 int rentid = (int)rentDGV.CurrentRow.Cells[0].Value;
-                DialogResult dr = Messages.DisplayQuestionMessage("Вы действительно хотите удалить данные? Они могут быть связаны");
-                if (dr == DialogResult.Yes)
-                {
+                    
                     RentTable.Delete(rentid);
                     rentDGV.DataSource = RentTable.GetTable();
                     Messages.DisplayInfoMessage("Данные успешно удалены!");
-                }
             }
             catch
             {
@@ -166,7 +163,7 @@ namespace WinFormsApp1
 
             if (RentTable.Insert(clientId, employeeId, carId, start_date, end_date))
             {
-                insert_employeeid_tb.Text = "";
+                insert_employeeidnew_tb.Text = "";
                 insert_clientid_tb.Text = "";
                 insert_carid_tb.Text = "";
 
@@ -244,12 +241,12 @@ namespace WinFormsApp1
 
         private void insert_cancel_button_Click(object sender, EventArgs e)
         {
-
+            insert_rent_box.Hide(); 
         }
 
         private void update_cancel_button_Click(object sender, EventArgs e)
         {
-
+            update_rent_box.Hide();
         }
 
         private void to_back_button_Click(object sender, EventArgs e)
@@ -261,13 +258,13 @@ namespace WinFormsApp1
 
         private void buttonIncreaseWidth_Click(object sender, EventArgs e)
         {
-            Width += 700;
+            Width = 1500;
             CenterToScreen();
         }
 
         private void buttonResetSize_Click(object sender, EventArgs e)
         {
-            Width = 1072;
+            Width = 930;
             CenterToScreen();
         }
 

@@ -17,6 +17,12 @@ namespace WinFormsApp1
         {
             _employeeName = employeeIdAuto;
             InitializeComponent();
+            this.FormClosing += Form_FormClosing;
+        }
+
+        private void Form_FormClosing(object? sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
 
         public EmployeeForm()
@@ -41,8 +47,13 @@ namespace WinFormsApp1
         private void rent_button_Click(object sender, EventArgs e)
         {
             Hide();
-            EmployeeRentForm employeeRentForm = new EmployeeRentForm(_employeeName); 
+            EmployeeRentForm employeeRentForm = new EmployeeRentForm(_employeeName);
             employeeRentForm.Show();
+        }
+
+        private void EmployeeForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

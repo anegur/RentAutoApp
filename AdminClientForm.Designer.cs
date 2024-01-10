@@ -121,12 +121,13 @@
             clientDGV.AllowUserToDeleteRows = false;
             clientDGV.AllowUserToResizeColumns = false;
             clientDGV.AllowUserToResizeRows = false;
+            clientDGV.BackgroundColor = Color.SteelBlue;
             clientDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             clientDGV.Columns.AddRange(new DataGridViewColumn[] { clientid, fio, phone_number, email, password });
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Window;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;

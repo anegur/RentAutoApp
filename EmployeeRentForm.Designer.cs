@@ -30,17 +30,14 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             buttonResetSize = new Button();
             buttonIncreaseWidth = new Button();
             label2 = new Label();
             to_back_button = new Label();
             panel1 = new Panel();
             label17 = new Label();
-            label16 = new Label();
             label12 = new Label();
             dataGridView3 = new DataGridView();
-            dataGridView2 = new DataGridView();
             dataGridView1 = new DataGridView();
             rentDGV = new DataGridView();
             rentid = new DataGridViewTextBoxColumn();
@@ -80,7 +77,6 @@
             label1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)rentDGV).BeginInit();
             update_rent_box.SuspendLayout();
@@ -141,10 +137,8 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.Honeydew;
             panel1.Controls.Add(label17);
-            panel1.Controls.Add(label16);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(dataGridView3);
-            panel1.Controls.Add(dataGridView2);
             panel1.Controls.Add(dataGridView1);
             panel1.Controls.Add(rentDGV);
             panel1.Controls.Add(update_rent_box);
@@ -156,7 +150,7 @@
             panel1.ForeColor = Color.FromArgb(224, 224, 224);
             panel1.Location = new Point(-4, 48);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1654, 496);
+            panel1.Size = new Size(1675, 496);
             panel1.TabIndex = 49;
             // 
             // label17
@@ -164,22 +158,11 @@
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label17.ForeColor = Color.Olive;
-            label17.Location = new Point(939, 329);
+            label17.Location = new Point(936, 167);
             label17.Name = "label17";
             label17.Size = new Size(146, 21);
             label17.TabIndex = 45;
             label17.Text = "Таблица: Машины";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label16.ForeColor = Color.Olive;
-            label16.Location = new Point(939, 166);
-            label16.Name = "label16";
-            label16.Size = new Size(169, 21);
-            label16.TabIndex = 44;
-            label16.Text = "Таблица: Сотрудники";
             // 
             // label12
             // 
@@ -204,31 +187,12 @@
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             dataGridView3.DefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView3.Location = new Point(939, 353);
+            dataGridView3.Location = new Point(936, 191);
             dataGridView3.Margin = new Padding(3, 2, 3, 2);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.RowHeadersWidth = 51;
             dataGridView3.Size = new Size(579, 136);
             dataGridView3.TabIndex = 22;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.BackgroundColor = Color.DarkCyan;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(224, 224, 224);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView2.Location = new Point(939, 189);
-            dataGridView2.Margin = new Padding(3, 2, 3, 2);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(579, 139);
-            dataGridView2.TabIndex = 21;
             // 
             // dataGridView1
             // 
@@ -238,14 +202,14 @@
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.BackgroundColor = Color.CadetBlue;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(224, 224, 224);
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.Location = new Point(936, 26);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
@@ -634,7 +598,7 @@
             label1.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label1.Location = new Point(-4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(1654, 45);
+            label1.Size = new Size(1675, 45);
             label1.TabIndex = 48;
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -642,7 +606,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1496, 554);
+            ClientSize = new Size(1517, 554);
             Controls.Add(buttonResetSize);
             Controls.Add(buttonIncreaseWidth);
             Controls.Add(label2);
@@ -655,7 +619,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)rentDGV).EndInit();
             update_rent_box.ResumeLayout(false);
@@ -674,10 +637,8 @@
         private Label to_back_button;
         private Panel panel1;
         private Label label17;
-        private Label label16;
         private Label label12;
         private DataGridView dataGridView3;
-        private DataGridView dataGridView2;
         private DataGridView dataGridView1;
         private DataGridView rentDGV;
         private DataGridViewTextBoxColumn rentid;

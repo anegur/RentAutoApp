@@ -36,9 +36,9 @@ namespace WinFormsApp1
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AdminAuthForm adminAuthForm = new AdminAuthForm();
-            adminAuthForm.Show();
+            Hide();
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
         }
 
         private void car_button_Click(object sender, EventArgs e)

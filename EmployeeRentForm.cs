@@ -37,9 +37,9 @@ namespace WinFormsApp1
 
             rentDGV.DataSource = RentTable.GetTable();
             dataGridView1.DataSource = ClientTable.GetTable();
-            dataGridView2.DataSource = EmployeeTable.GetTable();
+            //dataGridView2.DataSource = EmployeeTable.GetTable();
             dataGridView3.DataSource = CarTable.GetTable();
-            Width = 1072;
+            Width = 930;
             CenterToScreen();
 
             if (rentDGV.RowCount < 1)
@@ -159,7 +159,7 @@ namespace WinFormsApp1
                 return;
             }
 
-            //Messages.DisplayInfoMessage($"Selected Employee ID: {employeeId}");
+            Messages.DisplayInfoMessage($"Selected Employee ID: {employeeId}");
 
             if (RentTable.Insert(clientId, employeeId, carId, start_date, end_date))
             {
@@ -259,12 +259,12 @@ namespace WinFormsApp1
 
         private void insert_cancel_button_Click(object sender, EventArgs e)
         {
-
+            insert_rent_box.Hide();
         }
 
         private void update_cancel_button_Click(object sender, EventArgs e)
         {
-
+            update_rent_box.Hide();
         }
 
         private void to_back_button_Click(object sender, EventArgs e)
@@ -276,13 +276,13 @@ namespace WinFormsApp1
 
         private void buttonIncreaseWidth_Click(object sender, EventArgs e)
         {
-            Width += 700;
+            Width = 1540;
             CenterToScreen();
         }
 
         private void buttonResetSize_Click(object sender, EventArgs e)
         {
-            Width = 1072;
+            Width = 930;
             CenterToScreen();
         }
 
