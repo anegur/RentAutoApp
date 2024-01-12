@@ -159,7 +159,7 @@ namespace WinFormsApp1
                 return;
             }
 
-            Messages.DisplayInfoMessage($"Selected Employee ID: {employeeId}");
+            //Messages.DisplayInfoMessage($"Selected Employee ID: {employeeId}");
 
             if (RentTable.Insert(clientId, employeeId, carId, start_date, end_date))
             {
@@ -258,7 +258,7 @@ namespace WinFormsApp1
 
         private void buttonIncreaseWidth_Click(object sender, EventArgs e)
         {
-            Width = 1500;
+            Width = 1560;
             CenterToScreen();
         }
 

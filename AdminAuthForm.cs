@@ -96,5 +96,10 @@ namespace WinFormsApp1
                 Messages.DisplayErrorMessage("Неверный логин или пароль!");
             }
         }
+
+        private void AdminAuthForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -151,6 +151,7 @@
             Name = "AdminAuthForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminAuthForm";
+            Load += AdminAuthForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

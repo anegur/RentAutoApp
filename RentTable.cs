@@ -21,6 +21,8 @@ namespace WinFormsApp1
 
             string query = "SELECT * FROM rent";
             table.Clear();
+
+
             DB.openConnection();
 
             command = new NpgsqlCommand(query, DB.GetConnection());
@@ -28,6 +30,7 @@ namespace WinFormsApp1
             adapter.Fill(table);
 
             DB.closeConnection();
+
 
             return table;
         }
@@ -39,34 +42,46 @@ namespace WinFormsApp1
                 "INSERT INTO rent (clientid, employeeid, carid, start_date, end_date) " +
                 "VALUES (@clientid, @employeeid, @carid, @start_date, @end_date)";
 
-            //try
-            //{
+            try
+            {
                 DB.openConnection();
-
-                command = new NpgsqlCommand(query, DB.GetConnection());
-                command.Parameters.AddWithValue("@clientid", clientid);
-                command.Parameters.AddWithValue("@employeeid", employeeid);
-                command.Parameters.AddWithValue("@carid", carid);
-                command.Parameters.AddWithValue("@start_date", start_date);
-                command.Parameters.AddWithValue("@end_date", end_date);
-
-                if (command.ExecuteNonQuery() > 0)
+                using (var transaction = DB.GetConnection().BeginTransaction())
                 {
-                    DB.closeConnection();
-                    return true;
+                    try
+                    {
+                        command = new NpgsqlCommand(query, DB.GetConnection());
+                        command.Parameters.AddWithValue("@clientid", clientid);
+                        command.Parameters.AddWithValue("@employeeid", employeeid);
+                        command.Parameters.AddWithValue("@carid", carid);
+                        command.Parameters.AddWithValue("@start_date", start_date);
+                        command.Parameters.AddWithValue("@end_date", end_date);
+
+                        if (command.ExecuteNonQuery() > 0)
+                        {
+                            transaction.Commit();
+                            DB.closeConnection();
+                            return true;
+                        }
+                        else
+                        {
+                            transaction.Rollback();
+                            DB.closeConnection();
+                            return false;
+                        }
+                    }
+                    catch
+                    {
+                        transaction.Rollback();
+                        throw;
+                    }
                 }
-                else
-                {
-                    DB.closeConnection();
-                    return false;
-                }
-            //}
-            //catch
-            //{
-            //    DB.closeConnection();
-            //    return false;
-            //}
-}
+            }
+            catch
+            {
+                DB.closeConnection();
+                return false;
+            }
+        }
 
 
         public static bool Update(int rentid, int clientid, int employeeid, int carid, DateTime start_date, DateTime end_date)
